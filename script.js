@@ -6,25 +6,13 @@ const pokemonContainer = document.getElementById("pokemon-container");
 const pokemonList = [
     {
         nickname: "Chop",
-        species: "#0475 - Gallade",
+        species: "#475 - Gallade",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     },
     {
         nickname: "Placeholder",
-        species: "#Placeholder - Placeholder",
-        description: "Placeholder",
-        imageUrl: "https://via.placeholder.com/200"
-    }
-       {
-        nickname: "Placeholder",
-        species: "#Placeholder - Placeholder",
-        description: "Placeholder",
-        imageUrl: "https://via.placeholder.com/200"
-    },
-    {
-        nickname: "Placeholder",
-        species: "#Placeholder - Placeholder",
+        species: "Placeholder",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     }
