@@ -80,18 +80,12 @@ function filterPokemon() {
     });
 }
 
-// Infinite scroll functionality
-function checkScroll() {
-    const scrollPosition = window.innerHeight + window.scrollY;
-    const bottomPosition = document.documentElement.scrollHeight;
+window.addEventListener("scroll", () => {
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
 
-    if (scrollPosition >= bottomPosition - 100) {  // 100px from the bottom to trigger load more
+    if (nearBottom) {
         displayPokemon();
     }
-}
+});
 
-// Load the first batch of Pokémon
-window.onload = () => {
-    displayPokemon();
-    window.addEventListener("scroll", checkScroll); // Add scroll event listener
-};
+window.onload = displayPokemon;
