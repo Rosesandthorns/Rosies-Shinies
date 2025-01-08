@@ -6,10 +6,10 @@ const loadMoreButton = document.getElementById("load-more");
 
 const pokemonList = [
     {
-        nickname: "Starlight",
-        species: "#025 - Pikachu",
-        description: "This Pikachu has a golden shiny hue and is known for its cheerful personality.",
-        imageUrl: "https://via.placeholder.com/200"
+        nickname: "Chop",
+        species: "#475 - Gallade",
+        description: "Placeholder",
+        imageUrl: "Image"
     },
     {
         nickname: "Nebula",
