@@ -1,77 +1,71 @@
-let currentIndex = 0;
-const itemsPerPage = 2; // Number of Pokémon to display per page
+let pokemonData = [];
+let displayedPokemon = 0;
 
-// Function to render Pokémon cards
-function renderPokemon() {
-    const container = document.getElementById("pokemon-container");
-    container.innerHTML = ""; // Clear previous content
+const pokemonContainer = document.getElementById("pokemon-container");
+const loadMoreButton = document.getElementById("load-more");
 
-    const endIndex = Math.min(currentIndex + itemsPerPage, pokemonData.length);
-    for (let i = currentIndex; i < endIndex; i++) {
-        const pokemon = pokemonData[i];
+const pokemonList = [
+    {
+        nickname: "Starlight",
+        species: "#025 - Pikachu",
+        description: "This Pikachu has a golden shiny hue and is known for its cheerful personality.",
+        imageUrl: "https://via.placeholder.com/200"
+    },
+    {
+        nickname: "Nebula",
+        species: "#094 - Gengar",
+        description: "Nebula has a ghostly purple glow and surprises opponents with its powerful moves.",
+        imageUrl: "https://via.placeholder.com/200"
+    }
+    // Add more shiny Pokémon as you like, just follow the same format
+];
+
+function displayPokemon() {
+    for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
+        if (i >= pokemonList.length) break;
+        const pokemon = pokemonList[i];
+
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
         card.innerHTML = `
-            <div class="pokemon-image">
-                <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
-            </div>
-            <div class="pokemon-info">
-                <p class="nickname">${pokemon.nickname}</p>
-                <p class="subtitle">${pokemon.number} - ${pokemon.name}</p>
-                <p class="description">${pokemon.description}</p>
-            </div>
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
         `;
 
-        container.appendChild(card);
+        pokemonContainer.appendChild(card);
     }
-
-    // If we've loaded all Pokémon, hide the "Load More" button
-    if (currentIndex + itemsPerPage >= pokemonData.length) {
-        document.getElementById("load-more").style.display = "none";
-    }
+    displayedPokemon += 2;
 }
 
-// Function to load more Pokémon
 function loadMore() {
-    currentIndex += itemsPerPage;
-    renderPokemon();
+    displayPokemon();
 }
 
-// Function to filter Pokémon based on search input
 function filterPokemon() {
-    const query = document.getElementById("search").value.toLowerCase();
-    const filteredData = pokemonData.filter(pokemon => 
-        pokemon.nickname.toLowerCase().includes(query) ||
-        pokemon.name.toLowerCase().includes(query)
+    const searchQuery = document.getElementById("search").value.toLowerCase();
+    const filteredPokemon = pokemonList.filter(pokemon =>
+        pokemon.nickname.toLowerCase().includes(searchQuery) ||
+        pokemon.species.toLowerCase().includes(searchQuery)
     );
-    currentIndex = 0; // Reset to start
-    renderFilteredPokemon(filteredData);
-}
 
-// Function to render filtered Pokémon
-function renderFilteredPokemon(filteredData) {
-    const container = document.getElementById("pokemon-container");
-    container.innerHTML = ""; // Clear previous content
-
-    filteredData.forEach(pokemon => {
+    displayedPokemon = 0;
+    pokemonContainer.innerHTML = "";
+    filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
         card.innerHTML = `
-            <div class="pokemon-image">
-                <img src="${pokemon.imgSrc}" alt="${pokemon.name}">
-            </div>
-            <div class="pokemon-info">
-                <p class="nickname">${pokemon.nickname}</p>
-                <p class="subtitle">${pokemon.number} - ${pokemon.name}</p>
-                <p class="description">${pokemon.description}</p>
-            </div>
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
         `;
-        
-        container.appendChild(card);
+
+        pokemonContainer.appendChild(card);
     });
 }
 
-// Initial render of Pokémon
-renderPokemon();
+window.onload = displayPokemon;
