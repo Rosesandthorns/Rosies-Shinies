@@ -1,3 +1,13 @@
+console.log("Page loaded");
+window.addEventListener("scroll", () => {
+    console.log("Scrolled");
+    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+
+    if (nearBottom) {
+        console.log("Near bottom, loading more Pokémon");
+        displayPokemon();
+    }
+});
 let pokemonData = [];
 let displayedPokemon = 0;
 
