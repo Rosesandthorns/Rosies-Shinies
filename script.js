@@ -2,19 +2,18 @@ let pokemonData = [];
 let displayedPokemon = 0;
 
 const pokemonContainer = document.getElementById("pokemon-container");
-const loadMoreButton = document.getElementById("load-more");
 
 const pokemonList = [
     {
         nickname: "Chop",
-        species: "#0475 - Gallade",
+        species: "#475 - Gallade",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     },
     {
-        nickname: "Placeholder",
-        species: "Placeholder",
-        description: "Placeholder",
+        nickname: "Nebula",
+        species: "#094 - Gengar",
+        description: "Nebula has a ghostly purple glow and surprises opponents with its powerful moves.",
         imageUrl: "https://via.placeholder.com/200"
     }
     // Add more shiny Pokémon as you like, just follow the same format
@@ -38,10 +37,6 @@ function displayPokemon() {
         pokemonContainer.appendChild(card);
     }
     displayedPokemon += 2;
-}
-
-function loadMore() {
-    displayPokemon();
 }
 
 function filterPokemon() {
@@ -68,4 +63,18 @@ function filterPokemon() {
     });
 }
 
-window.onload = displayPokemon;
+// Infinite scroll functionality
+function checkScroll() {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const bottomPosition = document.documentElement.scrollHeight;
+
+    if (scrollPosition >= bottomPosition - 100) {  // 100px from the bottom to trigger load more
+        displayPokemon();
+    }
+}
+
+// Load the first batch of Pokémon
+window.onload = () => {
+    displayPokemon();
+    window.addEventListener("scroll", checkScroll); // Add scroll event listener
+};
