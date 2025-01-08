@@ -9,7 +9,7 @@ const pokemonList = [
         nickname: "Chop",
         species: "#475 - Gallade",
         description: "Placeholder",
-        imageUrl: "Image"
+        imageUrl: "https://via.placeholder.com/200"
     },
     {
         nickname: "Nebula",
