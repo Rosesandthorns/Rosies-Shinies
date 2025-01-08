@@ -1,4 +1,4 @@
-/* General Styles */
+/* General body styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -7,6 +7,7 @@ body {
     color: #333;
 }
 
+/* Header styling */
 header {
     text-align: center;
     margin-top: 20px;
@@ -22,31 +23,34 @@ input[type="text"] {
     border: 1px solid #ccc;
 }
 
-/* Pokémon Container Styles */
+/* Pokemon container for the cards */
 #pokemon-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Center the cards in the container */
+    gap: 20px; /* Add space between cards */
     margin-top: 20px;
+    padding: 10px;
 }
 
-/* Pokémon Card Styles */
+/* Pokemon card styling */
 .pokemon-card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 200px; /* Fixed width for cards */
-    margin: 10px;
+    width: 200px; /* Consistent width for all cards */
     text-align: center;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
+/* Pokemon card image styling */
 .pokemon-card img {
-    width: 100%; /* Full width for images */
+    width: 100%;
     border-radius: 8px;
 }
 
+/* Styling for text inside the card */
 .pokemon-card h3 {
     font-size: 1.2rem;
     font-weight: bold;
@@ -58,15 +62,25 @@ input[type="text"] {
     color: #666;
 }
 
-/* Responsive Design */
+/* Responsive design for screens larger than 600px */
 @media (min-width: 600px) {
     #pokemon-container {
-        justify-content: space-between; /* Adjust layout on larger screens */
+        justify-content: center; /* Ensure cards are centered on larger screens */
+    }
+
+    .pokemon-card {
+        max-width: 250px; /* Slightly larger cards for larger screens */
     }
 }
 
+/* Responsive design for screens smaller than 599px */
 @media (max-width: 599px) {
+    #pokemon-container {
+        flex-direction: column; /* Stack cards vertically on small screens */
+        align-items: center;
+    }
+
     .pokemon-card {
-        width: 90%; /* Make cards wider on smaller screens */
+        width: 90%; /* Make cards wider on small screens */
     }
 }
