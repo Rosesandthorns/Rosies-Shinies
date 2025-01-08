@@ -1,49 +1,32 @@
-// Pokémon data array
+let pokemonData = [];
+let displayedPokemon = 0;
+
+const pokemonContainer = document.getElementById("pokemon-container");
+
 const pokemonList = [
     {
         nickname: "Chop",
         species: "#475 - Gallade",
-        description: "Placeholder description for Gallade.",
-        imageUrl: "https://via.placeholder.com/200"
-    },
-    {
-        nickname: "Placeholder",
-        species: "Placeholder",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     },
     {
         nickname: "Placeholder",
-        species: "#Placeholder - Placeholder",
-        description: "Placeholder",
-        imageUrl: "https://via.placeholder.com/200"
-    },
-    {
-        nickname: "Placeholder",
-        species: "Placeholder",
+        species: "Placeholder - Placeholder",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     }
+    // Add more shiny Pokémon as you like, just follow the same format
 ];
 
-let displayedPokemon = 0; // Tracks the number of Pokémon displayed
-const batchSize = 2; // Number of Pokémon to load per batch
-
-// DOM Elements
-const pokemonContainer = document.getElementById("pokemon-container");
-const searchInput = document.getElementById("search");
-
-// Function to display Pokémon cards
 function displayPokemon() {
-    for (let i = displayedPokemon; i < displayedPokemon + batchSize; i++) {
-        if (i >= pokemonList.length) break; // Stop if all Pokémon are displayed
+    for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
+        if (i >= pokemonList.length) break;
         const pokemon = pokemonList[i];
 
-        // Create card element
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
-        // Card content
         card.innerHTML = `
             <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
             <h3>${pokemon.nickname}</h3>
@@ -51,23 +34,24 @@ function displayPokemon() {
             <p>${pokemon.description}</p>
         `;
 
-        pokemonContainer.appendChild(card); // Add card to the container
+        pokemonContainer.appendChild(card);
     }
-    displayedPokemon += batchSize; // Update displayed Pokémon count
+    displayedPokemon += 2;
 }
 
-// Function to filter Pokémon based on search
+function loadMore() {
+    displayPokemon();
+}
+
 function filterPokemon() {
-    const searchQuery = searchInput.value.toLowerCase();
+    const searchQuery = document.getElementById("search").value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    pokemonContainer.innerHTML = ""; // Clear current cards
     displayedPokemon = 0;
-
-    // Display filtered Pokémon
+    pokemonContainer.innerHTML = "";
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -83,18 +67,4 @@ function filterPokemon() {
     });
 }
 
-// Function to handle infinite scroll
-function handleScroll() {
-    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
-
-    if (nearBottom) {
-        displayPokemon();
-    }
-}
-
-// Attach event listeners
-window.onload = () => {
-    displayPokemon(); // Display initial batch of Pokémon
-    window.addEventListener("scroll", handleScroll); // Add scroll listener
-};
-searchInput.addEventListener("input", filterPokemon); // Attach search functionality
+window.onload = displayPokemon;
