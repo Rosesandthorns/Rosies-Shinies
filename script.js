@@ -16,7 +16,24 @@ const pokemonList = [
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     }
-    // Add more shiny Pokémon as you like, just follow the same format
+ {
+        nickname: "Placeholder",
+        species: "Placeholder",
+        description: "Placeholder",
+        imageUrl: "https://via.placeholder.com/200"
+    }
+ {
+        nickname: "Placeholder",
+        species: "Placeholder",
+        description: "Placeholder",
+        imageUrl: "https://via.placeholder.com/200"
+    }
+ {
+        nickname: "Placeholder",
+        species: "Placeholder",
+        description: "Placeholder",
+        imageUrl: "https://via.placeholder.com/200"
+    }
 ];
 
 function displayPokemon() {
