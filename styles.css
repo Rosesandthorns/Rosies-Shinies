@@ -54,3 +54,28 @@ input[type="text"] {
     font-size: 1rem;
     color: #666;
 }
+.pokemon-card {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px auto;
+    padding: 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #fff;
+    max-width: 800px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 600px) {
+    .pokemon-card {
+        flex-direction: row; /* Ensure proper layout on larger screens */
+    }
+}
+
+@media (max-width: 599px) {
+    .pokemon-card {
+        flex-direction: column; /* Adjust layout for smaller screens */
+    }
+}
