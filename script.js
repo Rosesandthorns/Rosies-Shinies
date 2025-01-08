@@ -9,13 +9,13 @@ const pokemonList = [
         species: "#475 - Gallade",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
-    },
+    }, 
     {
-        nickname: "Placeholder",
-        species: "Placeholder - Placeholder",
+        nickname: "Bat",
+        species: "#475 - Gallade",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
-    }, 
+    },
     {
         nickname: "Placeholder",
         species: "Placeholder - Placeholder",
