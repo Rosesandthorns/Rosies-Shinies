@@ -15,19 +15,19 @@ const pokemonList = [
         species: "Placeholder",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
-    }
- {
+    },
+    {
         nickname: "Placeholder",
         species: "Placeholder",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
-    }
- {
+    },
+    {
         nickname: "Placeholder",
         species: "Placeholder",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
-    }
+    },
  {
         nickname: "Placeholder",
         species: "Placeholder",
