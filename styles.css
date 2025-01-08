@@ -23,17 +23,17 @@ input[type="text"] {
 
 #pokemon-container {
     display: flex;
-    flex-direction: column; /* Stack the cards vertically */
-    align-items: center; /* Center the cards */
+    flex-direction: column;
+    align-items: center;
     margin-top: 20px;
-    gap: 15px; /* Space between the cards */
 }
 
 .pokemon-card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 250px; /* Fixed width for each card */
+    width: 200px;
+    margin: 10px;
     text-align: center;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -55,12 +55,17 @@ input[type="text"] {
     color: #666;
 }
 
+/* No need for flex-direction changes for now, cards should stack vertically */
+
 @media (max-width: 599px) {
+    /* For mobile screens, the cards will stack vertically as well */
     #pokemon-container {
-        flex-direction: column; /* Keep cards stacked vertically on mobile */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 
     .pokemon-card {
-        width: 90%; /* Use more of the screen width on mobile */
+        width: 90%; /* Adjust width for mobile */
     }
 }
