@@ -7,14 +7,14 @@ const loadMoreButton = document.getElementById("load-more");
 const pokemonList = [
     {
         nickname: "Chop",
-        species: "#475 - Gallade",
+        species: "#0475 - Gallade",
         description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     },
     {
-        nickname: "Nebula",
-        species: "#094 - Gengar",
-        description: "Nebula has a ghostly purple glow and surprises opponents with its powerful moves.",
+        nickname: "Placeholder",
+        species: "Placeholder",
+        description: "Placeholder",
         imageUrl: "https://via.placeholder.com/200"
     }
     // Add more shiny Pokémon as you like, just follow the same format
