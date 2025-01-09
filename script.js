@@ -307,24 +307,35 @@ function deloadPokemon() {
     });
 }
 
+let debounceTimer;
+
 function checkScroll() {
-    const scrollPosition = window.innerHeight + window.scrollY;
-    const bottomPosition = document.documentElement.scrollHeight;
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const bottomPosition = document.documentElement.scrollHeight;
 
-    // Load more Pokémon when near the bottom of the page
-    if (scrollPosition >= bottomPosition - 100) {
-        displayPokemon();
-    }
+        // Load more Pokémon when near the bottom of the page
+        if (scrollPosition >= bottomPosition - 100) {
+            displayPokemon();
+        }
 
-    // Deload Pokémon that are far outside the visible viewport
-    deloadPokemon();
+        // Deload Pokémon that are far outside the visible viewport
+        deloadPokemon();
 
-    // Ensure more Pokémon are loaded when scrolling up quickly
-    const cards = document.querySelectorAll(".pokemon-card");
-    if (cards.length < 10 || scrollPosition < window.innerHeight) {
-        displayPokemon();
-    }
+        // Ensure more Pokémon are loaded when scrolling up quickly
+        const cards = document.querySelectorAll(".pokemon-card");
+        if (cards.length < 10 || scrollPosition < window.innerHeight) {
+            displayPokemon();
+        }
+    }, 100); // Adjust the debounce delay as needed
 }
+
+// Initialize the page
+window.onload = () => {
+    displayPokemon(); // Load initial Pokémon
+    window.addEventListener("scroll", checkScroll); // Add scroll listener
+};
 
 // Search feature
 function filterPokemon() {
