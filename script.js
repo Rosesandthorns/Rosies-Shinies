@@ -1,6 +1,4 @@
-let pokemonData = [];
-let displayedPokemon = 0;
-
+let displayedPokemon = 0; // Tracks the number of displayed Pokémon
 const pokemonContainer = document.getElementById("pokemon-container");
 
 const pokemonList = [
@@ -276,13 +274,10 @@ const pokemonList = [
     },
     // Use the above format for adding shinies
 ];
-// Function to display cards
+// Display Pokémon cards
 function displayPokemon() {
-    const numToDisplay = 2;
-    const end = displayedPokemon + numToDisplay;
-    const pokemonSubset = pokemonList.slice(displayedPokemon, end);
-
-    pokemonSubset.forEach(pokemon => {
+    const pokemonToShow = pokemonList.slice(displayedPokemon, displayedPokemon + 2);
+    pokemonToShow.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
@@ -295,19 +290,31 @@ function displayPokemon() {
 
         pokemonContainer.appendChild(card);
     });
-
-    displayedPokemon += numToDisplay;
+    displayedPokemon += pokemonToShow.length;
 }
 
-// Search functionality
+// Infinite scrolling
+function infiniteScroll() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight - 10) {
+        if (displayedPokemon < pokemonList.length) {
+            displayPokemon();
+        }
+    }
+}
+
+// Filter Pokémon by search query
 function filterPokemon() {
-    const searchQuery = searchInput.value.toLowerCase();
+    const searchQuery = document.getElementById("search").value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    pokemonContainer.innerHTML = "";  // Clear the container
+    // Clear existing Pokémon
+    pokemonContainer.innerHTML = "";
+    displayedPokemon = 0;
+
+    // Display filtered Pokémon
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -323,11 +330,8 @@ function filterPokemon() {
     });
 }
 
-// Load more Pokémon when scrolling
-function loadMore() {
+// Initialize the page
+window.onload = () => {
     displayPokemon();
-}
-
-window.onload = displayPokemon; // Display the first batch of Pokémon cards
-
-searchInput.addEventListener("input", filterPokemon);  // Bind search functionality
+    window.addEventListener("scroll", infiniteScroll); // Attach infinite scrolling
+};
