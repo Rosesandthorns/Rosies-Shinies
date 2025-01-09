@@ -42,7 +42,7 @@ function displayPokemon() {
 
         pokemonContainer.appendChild(card);
     }
-    displayedPokemon += 2;
+    displayedPokemon += 10;
 }
 
 function filterPokemon() {
