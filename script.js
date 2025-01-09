@@ -337,7 +337,3 @@ window.onload = () => {
     displayPokemon(16);
     window.addEventListener("scroll", checkScroll);
 };
-window.onload = () => {
-    displayPokemon(16);
-    window.addEventListener("scroll", checkScroll);
-};
