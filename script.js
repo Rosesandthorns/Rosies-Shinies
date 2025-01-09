@@ -316,19 +316,32 @@ function displayPokemon(count = 16) {
 
 // Function to filter Pokémon based on search input
 function filterPokemon() {
-    const filter = searchInput.value.toLowerCase();
-    pokemonContainer.innerHTML = '';
+    const searchQuery = document.getElementById("search").value.toLowerCase();
+
+    // Filter the Pokémon list based on the search query
+    const filteredPokemon = pokemonList.filter(pokemon =>
+        pokemon.nickname.toLowerCase().includes(searchQuery) ||
+        pokemon.species.toLowerCase().includes(searchQuery)
+    );
+
+    // Clear the container
+    pokemonContainer.innerHTML = "";
     displayedPokemon = 0;
 
-    pokemonList.length = 0;
-    const filteredList = originalPokemonList.filter(pokemon => 
-        pokemon.nickname.toLowerCase().includes(filter) ||
-        pokemon.species.toLowerCase().includes(filter) ||
-        pokemon.description.toLowerCase().includes(filter)
-    );
-    pokemonList.push(...filteredList);
+    // Display filtered Pokémon
+    filteredPokemon.forEach(pokemon => {
+        const card = document.createElement("div");
+        card.classList.add("pokemon-card");
 
-    displayPokemon(displayedPokemon);
+        card.innerHTML = `
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
+        `;
+
+        pokemonContainer.appendChild(card);
+    });
 }
 
 // Improved debounce logic
