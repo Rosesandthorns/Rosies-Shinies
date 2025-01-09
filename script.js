@@ -248,7 +248,7 @@ const pokemonList = [
     {
         nickname: "Radaz",
         species: "#0258 - Mudkip",
-        description: "PINK FISH       was found in Blueberry Academy",
+        description: "PINK FISH was found in Blueberry Academy",
         imageUrl: "https://via.placeholder.com/200"
     },
     {
@@ -346,10 +346,6 @@ function checkScroll() {
 }
 
 window.onload = () => {
-    displayPokemon(16);
-    window.addEventListener("scroll", checkScroll);
-    searchInput.addEventListener("input", filterPokemon);
-};
     displayPokemon(16);
     window.addEventListener("scroll", checkScroll);
     searchInput.addEventListener("input", filterPokemon);
