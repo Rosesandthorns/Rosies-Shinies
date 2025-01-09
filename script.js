@@ -275,7 +275,6 @@ const pokemonList = [
         imageUrl: "https://via.placeholder.com/200"
     }
     // Use the above format for adding shinies
-];
 
 function displayPokemon() {
     for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
@@ -321,6 +320,17 @@ function filterPokemon() {
     });
 }
 
+function deloadPokemon() {
+    const cards = document.querySelectorAll(".pokemon-card");
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        // Check if card is far outside the viewport (above or below by 300px)
+        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
+            card.remove();
+        }
+    });
+}
+
 // Infinite scroll functionality
 function checkScroll() {
     const scrollPosition = window.innerHeight + window.scrollY;
@@ -329,6 +339,7 @@ function checkScroll() {
     if (scrollPosition >= bottomPosition - 100) {  // 100px from the bottom to trigger load more
         displayPokemon();
     }
+    deloadPokemon(); // Remove cards outside the viewport
 }
 
 // Load the first batch of Pokémon
