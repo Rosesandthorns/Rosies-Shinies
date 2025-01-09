@@ -313,7 +313,7 @@ function filterPokemon() {
 
     // Clear the container and reset displayed count
     pokemonContainer.innerHTML = "";
-    displayedPokemon = 10;
+    displayedPokemon = 0;
 
     // Display filtered Pokémon
     filteredPokemon.forEach(pokemon => {
@@ -331,8 +331,9 @@ function filterPokemon() {
     });
 }
 
-// Initialize the page
+// Ensure proper layout and scrolling behavior on load
 window.onload = () => {
+    document.body.scrollTo(0, 0); // Reset scroll position
     displayPokemon();
     window.addEventListener("scroll", infiniteScroll); // Attach infinite scrolling
 };
