@@ -276,8 +276,8 @@ const pokemonList = [
     }
 ]; // <-- Added missing bracket and semicolon
 
-function displayPokemon() {
-    for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
+function displayPokemon(count = 10) { // Display 10 Pokémon cards initially
+    for (let i = displayedPokemon; i < displayedPokemon + count; i++) {
         if (i >= pokemonList.length) break;
         const pokemon = pokemonList[i];
 
@@ -293,7 +293,7 @@ function displayPokemon() {
 
         pokemonContainer.appendChild(card);
     }
-    displayedPokemon += 2;
+    displayedPokemon += count;
 }
 
 function deloadPokemon() {
@@ -317,7 +317,7 @@ function checkScroll() {
 
         // Load more Pokémon when near the bottom of the page
         if (scrollPosition >= bottomPosition - 100) {
-            displayPokemon();
+            displayPokemon(2); // Load 2 more Pokémon cards
         }
 
         // Deload Pokémon that are far outside the visible viewport
@@ -326,14 +326,14 @@ function checkScroll() {
         // Ensure more Pokémon are loaded when scrolling up quickly
         const cards = document.querySelectorAll(".pokemon-card");
         if (cards.length < 10 || scrollPosition < window.innerHeight) {
-            displayPokemon();
+            displayPokemon(2); // Load 2 more Pokémon cards
         }
     }, 100); // Adjust the debounce delay as needed
 }
 
 // Initialize the page
 window.onload = () => {
-    displayPokemon(); // Load initial Pokémon
+    displayPokemon(10); // Load initial Pokémon with 10 cards
     window.addEventListener("scroll", checkScroll); // Add scroll listener
 };
 
@@ -362,6 +362,11 @@ function filterPokemon() {
     });
 }
 
+// Initialize the page
+window.onload = () => {
+    displayPokemon(10); // Load initial Pokémon with 10 cards
+    window.addEventListener("scroll", checkScroll); // Add scroll listener
+};
 // Initialize the page
 window.onload = () => {
     displayPokemon(); // Load initial Pokémon
