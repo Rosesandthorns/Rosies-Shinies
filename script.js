@@ -278,10 +278,10 @@ const pokemonList = [
 ];
 
 function displayPokemon() {
-    pokemonContainer.innerHTML = "";  // Clear the container before adding new cards
-
-    for (let i = 0; i < pokemonList.length; i++) {
+    for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
+        if (i >= pokemonList.length) break;
         const pokemon = pokemonList[i];
+
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
@@ -294,16 +294,22 @@ function displayPokemon() {
 
         pokemonContainer.appendChild(card);
     }
+    displayedPokemon += 2;
+}
+
+function loadMore() {
+    displayPokemon();
 }
 
 function filterPokemon() {
-    const searchQuery = searchInput.value.toLowerCase();
+    const searchQuery = document.getElementById("search").value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    pokemonContainer.innerHTML = ""; // Clear the container before showing filtered cards
+    displayedPokemon = 0;
+    pokemonContainer.innerHTML = "";
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -319,19 +325,4 @@ function filterPokemon() {
     });
 }
 
-// Load more cards on scroll (optimized for Safari and other browsers)
-function loadMoreOnScroll() {
-    window.addEventListener('scroll', function() {
-        const bottom = document.documentElement.scrollHeight === window.innerHeight + window.scrollY;
-        if (bottom) {
-            displayPokemon(); // Display more cards when the user reaches the bottom
-        }
-    });
-}
-
-window.onload = () => {
-    displayPokemon();  // Load initial cards
-    loadMoreOnScroll();  // Setup scroll event listener
-};
-
-searchInput.addEventListener("input", filterPokemon);  // Setup search functionality
+window.onload = displayPokemon;
