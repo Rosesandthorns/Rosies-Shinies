@@ -318,6 +318,12 @@ function checkScroll() {
 
     // Deload Pokémon that are far outside the visible viewport
     deloadPokemon();
+
+    // Ensure more Pokémon are loaded when scrolling up quickly
+    const cards = document.querySelectorAll(".pokemon-card");
+    if (cards.length < 2) {
+        displayPokemon();
+    }
 }
 
 // Search feature
