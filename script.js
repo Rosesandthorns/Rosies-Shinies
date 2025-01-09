@@ -285,13 +285,12 @@ function displayPokemon(count = 16) {
 
     const remaining = pokemonList.length - displayedPokemon;
     const loadCount = Math.min(count, remaining);
-    const toLoad = Math.ceil(loadCount / 4) * 4; // Ensure a multiple of 4
+    const toLoad = Math.ceil(loadCount / 4) * 4;
 
     for (let i = displayedPokemon; i < displayedPokemon + toLoad; i++) {
         if (i >= pokemonList.length) break;
         const pokemon = pokemonList[i];
 
-        // Ensure valid data
         if (!pokemon || !pokemon.nickname || !pokemon.imageUrl) {
             console.warn(`Invalid data for Pokémon at index ${i}`, pokemon);
             continue;
@@ -318,15 +317,15 @@ function filterPokemon() {
     const filter = searchInput.value.toLowerCase();
     pokemonContainer.innerHTML = '';
     displayedPokemon = 0;
-    
-    const filteredList = pokemonList.filter(pokemon => 
+
+    pokemonList.length = 0;
+    const filteredList = originalPokemonList.filter(pokemon => 
         pokemon.nickname.toLowerCase().includes(filter) ||
         pokemon.species.toLowerCase().includes(filter) ||
         pokemon.description.toLowerCase().includes(filter)
     );
-
-    pokemonList.length = 0;
     pokemonList.push(...filteredList);
+
     displayPokemon(displayedPokemon);
 }
 
@@ -341,7 +340,7 @@ function checkScroll() {
         if (scrollPosition >= bottomPosition - 200) {
             displayPokemon(16);
         }
-    }, 100); // Adjusted debounce delay for smoother scrolling
+    }, 100);
 }
 
 window.onload = () => {
