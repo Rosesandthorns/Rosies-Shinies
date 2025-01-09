@@ -321,7 +321,7 @@ function checkScroll() {
 
     // Ensure more Pokémon are loaded when scrolling up quickly
     const cards = document.querySelectorAll(".pokemon-card");
-    if (cards.length < 2) {
+    if (cards.length < 10) {
         displayPokemon();
     }
 }
