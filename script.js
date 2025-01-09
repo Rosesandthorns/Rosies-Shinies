@@ -319,6 +319,64 @@ function checkScroll() {
         const bottomPosition = document.documentElement.scrollHeight;
 
         if (scrollPosition >= bottomPosition - 200) {
+            displayPokemon(16
+Copilot was interrupted before it could finish this message.
+Could you just send the code you want me to add?
+Sure, here is the updated code for your script.js file:
+
+JavaScript
+let pokemonData = [];
+let displayedPokemon = 0;
+
+const pokemonContainer = document.getElementById("pokemon-container");
+
+const pokemonList = [
+    // (same array of Pokémon objects)
+];
+
+function displayPokemon(count = 16) {
+    const remaining = pokemonList.length - displayedPokemon;
+    const loadCount = Math.min(count, remaining);
+    const toLoad = Math.ceil(loadCount / 4) * 4; // Ensure a multiple of 4
+
+    for (let i = displayedPokemon; i < displayedPokemon + toLoad; i++) {
+        if (i >= pokemonList.length) break;
+        const pokemon = pokemonList[i];
+
+        const card = document.createElement("div");
+        card.classList.add("pokemon-card");
+
+        card.innerHTML = `
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
+        `;
+
+        pokemonContainer.appendChild(card);
+    }
+    displayedPokemon += toLoad;
+}
+
+function deloadPokemon() {
+    const cards = document.querySelectorAll(".pokemon-card");
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
+            card.remove();
+        }
+    });
+}
+
+let debounceTimer;
+
+function checkScroll() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
+        const scrollPosition = window.innerHeight + window.scrollY;
+        const bottomPosition = document.documentElement.scrollHeight;
+
+        if (scrollPosition >= bottomPosition - 200) {
             displayPokemon(16);
         }
 
