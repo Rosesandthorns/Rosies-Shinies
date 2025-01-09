@@ -295,7 +295,7 @@ function displayPokemonCard(pokemon) {
 // Function to load more Pokémon when the user scrolls to the bottom
 function loadMore() {
     if (displayedPokemon < pokemonList.length) {
-        const cardsToShow = 2; // Number of cards to display at once
+        const cardsToShow = 10; // Number of cards to display at once
         for (let i = displayedPokemon; i < displayedPokemon + cardsToShow; i++) {
             if (i < pokemonList.length) {
                 displayPokemonCard(pokemonList[i]);
