@@ -278,12 +278,24 @@ const pokemonList = [
 
 // Function to display Pokémon cards
 function displayPokemon(count = 16) {
+    if (!pokemonContainer) {
+        console.error("Pokemon container element not found!");
+        return;
+    }
+
     const remaining = pokemonList.length - displayedPokemon;
     const loadCount = Math.min(count, remaining);
+    const toLoad = Math.ceil(loadCount / 4) * 4; // Ensure a multiple of 4
 
-    for (let i = displayedPokemon; i < displayedPokemon + loadCount; i++) {
+    for (let i = displayedPokemon; i < displayedPokemon + toLoad; i++) {
         if (i >= pokemonList.length) break;
         const pokemon = pokemonList[i];
+
+        // Ensure valid data
+        if (!pokemon || !pokemon.nickname || !pokemon.imageUrl) {
+            console.warn(`Invalid data for Pokémon at index ${i}`, pokemon);
+            continue;
+        }
 
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -298,27 +310,14 @@ function displayPokemon(count = 16) {
         pokemonContainer.appendChild(card);
     }
 
-    displayedPokemon += loadCount;
+    displayedPokemon += toLoad;
 }
 
-// Function to remove cards outside the viewport
-function deloadPokemon() {
-    const cards = document.querySelectorAll(".pokemon-card");
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
-            card.remove();
-        }
-    });
-}
+let debounceTimer;
 
-// Handle scroll events to load more and deload Pokémon
-let isScrolling = false;
 function checkScroll() {
-    if (isScrolling) return;
-    isScrolling = true;
-
-    requestAnimationFrame(() => {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
         const scrollPosition = window.innerHeight + window.scrollY;
         const bottomPosition = document.documentElement.scrollHeight;
 
@@ -326,13 +325,14 @@ function checkScroll() {
             displayPokemon(16);
         }
 
-        deloadPokemon();
-        isScrolling = false;
-    });
+        const cards = document.querySelectorAll(".pokemon-card").length;
+        if (cards % 4 !== 0 || scrollPosition < window.innerHeight) {
+            displayPokemon(4 - (cards % 4));
+        }
+    }, 50); // Reduced debounce delay for smoother scrolling
 }
 
-// Initialize the page
 window.onload = () => {
-    displayPokemon(16); // Load initial Pokémon
+    displayPokemon(16);
     window.addEventListener("scroll", checkScroll);
 };
