@@ -15,79 +15,79 @@ const pokemonList = [
         nickname: "Chedder",
         species: "#0805 - Stakataka",
         description: "This Yellow Wall Was Caught In The SWSH DlC, after 55 encounters",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Chedder.jpeg"
     },
     {
         nickname: "Moonlight",
         species: "#609 - Chandelure",
         description: "This Flaming Candle Was Caught In Kitakami",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Moonlight.png"
     },
     {
         nickname: "Jiggly",
         species: "#0039 - Jigglypuff",
         description: "This puffball was caught in Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Jiggly.png"
     },
     {
         nickname: "Aqua Antis",
         species: "#0055 - Golduck",
         description: "The Infamous Aqua Antis, Found in the SWSH DLC between my favourite shiny and my target",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Aqua%20Antis.png"
     },
     {
         nickname: "APE",
         species: "#0057 - Primeape",
         description: "This fighter was found in Paldea while looking for a Breloom",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Primape.png"
     },
     {
         nickname: "Anger",
         species: "#0057 - Primeape",
         description: "This warrior was found in Paldea while looking for a Breloom, right after APE",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Primape.png"
     },
     {
         nickname: "Fury",
         species: "#0058 - Growlithe",
         description: "This hotshot was found in Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Fury.png"
     },
     {
         nickname: "Legend",
         species: "#0059 - Arcanine",
-        description: "Fury's other brother, also found in Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        description: "Fury's older brother, also found in Paldea",
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Legendary.png"
     },
     {
         nickname: "Slow",
         species: "#0079 - Slowpoke",
         description: "This Simple Creature Was Caught In Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Slow.png"
     },
     {
         nickname: "Grapé",
         species: "#0080 - Slowbro",
         description: "Grapé is just as slow as Slow, but looks like a grape, caught in Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Slowbro.png"
     },
     {
         nickname: "Clover",
         species: "#0084 - Doduo",
         description: "This sili birb was caught at Blueberry Acadamy",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Clover.png"
     },
     {
         nickname: "Dodrio, Formally Lucky",
         species: "#0085 - Dotrio",
         description: "My first caught shiny, caught in PoGo",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Lucky.png"
     },
     {
         nickname: "Mint",
         species: "#0088 - Grimer",
         description: "This suprisingly nice smelling pile of poison was found while hunting Ditto in Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Mint.png"
     },
     {
         nickname: "Rotten",
