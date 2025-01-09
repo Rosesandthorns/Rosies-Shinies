@@ -313,17 +313,6 @@ function displayPokemon(count = 16) {
     displayedPokemon += toLoad;
 }
 
-// Function to remove cards outside the viewport
-function deloadPokemon() {
-    const cards = document.querySelectorAll(".pokemon-card");
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
-            card.remove();
-        }
-    });
-}
-
 let debounceTimer;
 
 function checkScroll() {
@@ -340,9 +329,6 @@ function checkScroll() {
         if (cards % 4 !== 0 || scrollPosition < window.innerHeight) {
             displayPokemon(4 - (cards % 4));
         }
-
-        // Call deloadPokemon to remove cards outside the viewport
-        deloadPokemon();
     }, 50); // Reduced debounce delay for smoother scrolling
 }
 
