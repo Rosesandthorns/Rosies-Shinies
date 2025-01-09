@@ -324,13 +324,11 @@ function deloadPokemon() {
     });
 }
 
-// Improved scroll handling using requestAnimationFrame
-let isScrolling = false;
-function checkScroll() {
-    if (isScrolling) return;
-    isScrolling = true;
+let debounceTimer;
 
-    requestAnimationFrame(() => {
+function checkScroll() {
+    clearTimeout(debounceTimer);
+    debounceTimer = setTimeout(() => {
         const scrollPosition = window.innerHeight + window.scrollY;
         const bottomPosition = document.documentElement.scrollHeight;
 
@@ -338,18 +336,17 @@ function checkScroll() {
             displayPokemon(16);
         }
 
+        const cards = document.querySelectorAll(".pokemon-card").length;
+        if (cards % 4 !== 0 || scrollPosition < window.innerHeight) {
+            displayPokemon(4 - (cards % 4));
+        }
+
+        // Call deloadPokemon to remove cards outside the viewport
         deloadPokemon();
-        isScrolling = false;
-    });
+    }, 50); // Reduced debounce delay for smoother scrolling
 }
 
-// Initialize the page
 window.onload = () => {
-    if (!pokemonContainer) {
-        console.error("Pokemon container element not found!");
-        return;
-    }
-
-    displayPokemon(16); // Load initial Pokémon
+    displayPokemon(16);
     window.addEventListener("scroll", checkScroll);
 };
