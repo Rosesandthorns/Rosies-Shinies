@@ -276,6 +276,8 @@ const pokemonList = [
         imageUrl: "https://via.placeholder.com/200"
     }
 ];
+const originalPokemonList = [...pokemonList]; // Store original list
+
 // Function to display Pokémon cards
 function displayPokemon(count = 16) {
     if (!pokemonContainer) {
@@ -344,6 +346,10 @@ function checkScroll() {
 }
 
 window.onload = () => {
+    displayPokemon(16);
+    window.addEventListener("scroll", checkScroll);
+    searchInput.addEventListener("input", filterPokemon);
+};
     displayPokemon(16);
     window.addEventListener("scroll", checkScroll);
     searchInput.addEventListener("input", filterPokemon);
