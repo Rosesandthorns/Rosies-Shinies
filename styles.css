@@ -1,3 +1,4 @@
+/* General Page Styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -6,6 +7,7 @@ body {
     color: #333;
 }
 
+/* Header and Search Box */
 header {
     text-align: center;
     margin-top: 20px;
@@ -21,21 +23,24 @@ input[type="text"] {
     border: 1px solid #ccc;
 }
 
+/* Pokémon Container */
 #pokemon-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /* Stack cards vertically */
     align-items: center;
     margin-top: 20px;
+    gap: 20px; /* Space between cards */
 }
 
+/* Pokémon Card Styling */
 .pokemon-card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: 200px;
-    margin: 10px;
-    text-align: center;
+    width: 90%; /* Cards will stretch to 90% of the screen width */
+    max-width: 400px; /* Limit the card width for larger screens */
     padding: 15px;
+    text-align: center;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
@@ -55,17 +60,15 @@ input[type="text"] {
     color: #666;
 }
 
-/* No need for flex-direction changes for now, cards should stack vertically */
-
-@media (max-width: 599px) {
-    /* For mobile screens, the cards will stack vertically as well */
+/* Media Query for Larger Screens */
+@media (min-width: 768px) {
     #pokemon-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        flex-direction: row; /* Cards align in a row */
+        flex-wrap: wrap; /* Allow wrapping to new rows */
+        justify-content: center;
     }
 
     .pokemon-card {
-        width: 90%; /* Adjust width for mobile */
+        margin: 10px; /* Add spacing between cards */
     }
 }
