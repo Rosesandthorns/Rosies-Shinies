@@ -296,6 +296,31 @@ function displayPokemon() {
     displayedPokemon += 2;
 }
 
+function deloadPokemon() {
+    const cards = document.querySelectorAll(".pokemon-card");
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        // Remove cards outside of the viewport by a large margin
+        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
+            card.remove();
+        }
+    });
+}
+
+function checkScroll() {
+    const scrollPosition = window.innerHeight + window.scrollY;
+    const bottomPosition = document.documentElement.scrollHeight;
+
+    // Load more Pokémon when near the bottom of the page
+    if (scrollPosition >= bottomPosition - 100) {
+        displayPokemon();
+    }
+
+    // Deload Pokémon that are far outside the visible viewport
+    deloadPokemon();
+}
+
+// Search feature
 function filterPokemon() {
     const searchQuery = document.getElementById("search").value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
@@ -304,7 +329,7 @@ function filterPokemon() {
     );
 
     displayedPokemon = 0;
-    pokemonContainer.innerHTML = "";
+    pokemonContainer.innerHTML = ""; // Clear all Pokémon
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -320,30 +345,8 @@ function filterPokemon() {
     });
 }
 
-function deloadPokemon() {
-    const cards = document.querySelectorAll(".pokemon-card");
-    cards.forEach(card => {
-        const rect = card.getBoundingClientRect();
-        // Check if card is far outside the viewport (above or below by 300px)
-        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
-            card.remove();
-        }
-    });
-}
-
-// Infinite scroll functionality
-function checkScroll() {
-    const scrollPosition = window.innerHeight + window.scrollY;
-    const bottomPosition = document.documentElement.scrollHeight;
-
-    if (scrollPosition >= bottomPosition - 100) {  // 100px from the bottom to trigger load more
-        displayPokemon();
-    }
-    deloadPokemon(); // Remove cards outside the viewport
-}
-
-// Load the first batch of Pokémon
+// Initialize the page
 window.onload = () => {
-    displayPokemon();
-    window.addEventListener("scroll", checkScroll); // Add scroll event listener
+    displayPokemon(); // Load initial Pokémon
+    window.addEventListener("scroll", checkScroll); // Add scroll listener
 };
