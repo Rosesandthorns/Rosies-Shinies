@@ -4,7 +4,7 @@ let displayedPokemon = 0;
 const pokemonContainer = document.getElementById("pokemon-container");
 
 const pokemonList = [
-  {
+    {
         nickname: "Chop",
         species: "#475 - Gallade",
         description: "This Blue False Swiper Was Caught In Paldea",
@@ -18,7 +18,7 @@ const pokemonList = [
     },
     {
         nickname: "Moonlight",
-        species: "609 - Chandelure",
+        species: "#609 - Chandelure",
         description: "This Flaming Candle Was Caught In Kitakami",
         imageUrl: "https://via.placeholder.com/200"
     },
@@ -36,13 +36,13 @@ const pokemonList = [
     },
     {
         nickname: "APE",
-        species: "0057 - Primeape",
+        species: "#0057 - Primeape",
         description: "This fighter was found in Paldea while looking for a Breloom",
         imageUrl: "https://via.placeholder.com/200"
     },
     {
         nickname: "Anger",
-        species: "0057 - Primeape",
+        species: "#0057 - Primeape",
         description: "This warrior was found in Paldea while looking for a Breloom, right after APE",
         imageUrl: "https://via.placeholder.com/200"
     },
@@ -63,7 +63,7 @@ const pokemonList = [
         species: "#0079 - Slowpoke",
         description: "This Simple Creature Was Caught In Paldea",
         imageUrl: "https://via.placeholder.com/200"
-    }, 
+    },
     {
         nickname: "Grapé",
         species: "#0080 - Slowbro",
@@ -274,7 +274,7 @@ const pokemonList = [
         description: "This gem was found in Paldea",
         imageUrl: "https://via.placeholder.com/200"
     }
-    // Use the above format for adding shinies
+]; // <-- Added missing bracket and semicolon
 
 function displayPokemon() {
     for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
