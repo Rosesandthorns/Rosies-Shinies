@@ -273,7 +273,7 @@ const pokemonList = [
         species: "#0302 - Sableye",
         description: "This gem was found in Paldea",
         imageUrl: "https://via.placeholder.com/200"
-    }
+    },
     // Use the above format for adding shinies
 ];
 // Function to display cards
