@@ -273,17 +273,15 @@ const pokemonList = [
         species: "#0302 - Sableye",
         description: "This gem was found in Paldea",
         imageUrl: "https://via.placeholder.com/200"
-    },
+    }
     // Use the above format for adding shinies
 ];
 
-/ Function to display cards
 function displayPokemon() {
-    const numToDisplay = 2;
-    const end = displayedPokemon + numToDisplay;
-    const pokemonSubset = pokemonList.slice(displayedPokemon, end);
+    pokemonContainer.innerHTML = "";  // Clear the container before adding new cards
 
-    pokemonSubset.forEach(pokemon => {
+    for (let i = 0; i < pokemonList.length; i++) {
+        const pokemon = pokemonList[i];
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
@@ -295,12 +293,9 @@ function displayPokemon() {
         `;
 
         pokemonContainer.appendChild(card);
-    });
-
-    displayedPokemon += numToDisplay;
+    }
 }
 
-// Search functionality
 function filterPokemon() {
     const searchQuery = searchInput.value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
@@ -308,7 +303,7 @@ function filterPokemon() {
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    pokemonContainer.innerHTML = "";  // Clear the container
+    pokemonContainer.innerHTML = ""; // Clear the container before showing filtered cards
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -324,22 +319,19 @@ function filterPokemon() {
     });
 }
 
-// Set up IntersectionObserver to load more cards when user scrolls down
-function setupScrollObserver() {
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                displayPokemon();  // Trigger loading more Pokémon cards
-            }
-        });
-    }, { threshold: 1.0 });
-
-    observer.observe(document.querySelector("#load-more"));
+// Load more cards on scroll (optimized for Safari and other browsers)
+function loadMoreOnScroll() {
+    window.addEventListener('scroll', function() {
+        const bottom = document.documentElement.scrollHeight === window.innerHeight + window.scrollY;
+        if (bottom) {
+            displayPokemon(); // Display more cards when the user reaches the bottom
+        }
+    });
 }
 
 window.onload = () => {
-    displayPokemon();  // Display the first batch of Pokémon
-    setupScrollObserver();  // Set up the scroll loading
+    displayPokemon();  // Load initial cards
+    loadMoreOnScroll();  // Setup scroll event listener
 };
 
-searchInput.addEventListener("input", filterPokemon);  // Bind search functionality
+searchInput.addEventListener("input", filterPokemon);  // Setup search functionality
