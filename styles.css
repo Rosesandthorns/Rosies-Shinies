@@ -2,7 +2,7 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #14a692;
+    background-color: #f4f4f9;
     color: #333;
     overflow-x: hidden; /* Prevent horizontal scrolling */
 }
@@ -26,9 +26,10 @@ input[type="text"] {
     display: flex;
     flex-direction: column; /* Stack cards vertically */
     align-items: center; /* Center cards horizontally */
-    gap: 20px; /* Spacing between cards */
+    gap: 20px; /* Space between cards */
     margin: 20px auto;
     width: 100%; /* Full width for alignment */
+    overflow: auto; /* Ensure scrolling */
 }
 
 .pokemon-card {
