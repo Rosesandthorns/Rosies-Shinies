@@ -276,10 +276,13 @@ const pokemonList = [
     }
 ];
 
-function displayPokemon(count = 16) { // Display 16 Pokémon cards initially
+function displayPokemon(count = 16) {
     const remaining = pokemonList.length - displayedPokemon;
     const loadCount = Math.min(count, remaining);
-    for (let i = displayedPokemon; i < displayedPokemon + loadCount; i++) {
+    const toLoad = Math.ceil(loadCount / 4) * 4; // Ensure a multiple of 4
+
+    for (let i = displayedPokemon; i < displayedPokemon + toLoad; i++) {
+        if (i >= pokemonList.length) break;
         const pokemon = pokemonList[i];
 
         const card = document.createElement("div");
@@ -294,14 +297,13 @@ function displayPokemon(count = 16) { // Display 16 Pokémon cards initially
 
         pokemonContainer.appendChild(card);
     }
-    displayedPokemon += loadCount;
+    displayedPokemon += toLoad;
 }
 
 function deloadPokemon() {
     const cards = document.querySelectorAll(".pokemon-card");
     cards.forEach(card => {
         const rect = card.getBoundingClientRect();
-        // Remove cards outside of the viewport by a large margin
         if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
             card.remove();
         }
@@ -316,23 +318,21 @@ function checkScroll() {
         const scrollPosition = window.innerHeight + window.scrollY;
         const bottomPosition = document.documentElement.scrollHeight;
 
-        // Load more Pokémon when near the bottom of the page
         if (scrollPosition >= bottomPosition - 200) {
-            displayPokemon(16); // Load 16 more Pokémon cards
+            displayPokemon(16);
         }
 
-        // Ensure more Pokémon are loaded when scrolling up quickly
         const cards = document.querySelectorAll(".pokemon-card").length;
         if (cards % 4 !== 0 || scrollPosition < window.innerHeight) {
-            displayPokemon(4 - (cards % 4)); // Ensure a multiple of 4 cards are loaded
+            displayPokemon(4 - (cards % 4));
         }
-    }, 100); // Adjust the debounce delay as needed
+    }, 50); // Reduced debounce delay for smoother scrolling
 }
 
 // Initialize the page
 window.onload = () => {
-    displayPokemon(16); // Load initial Pokémon with 16 cards
-    window.addEventListener("scroll", checkScroll); // Add scroll listener
+    displayPokemon(16);
+    window.addEventListener("scroll", checkScroll);
 };
 
 // Search feature
@@ -344,7 +344,7 @@ function filterPokemon() {
     );
 
     displayedPokemon = 0;
-    pokemonContainer.innerHTML = ""; // Clear all Pokémon
+    pokemonContainer.innerHTML = "";
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -362,6 +362,6 @@ function filterPokemon() {
 
 // Initialize the page
 window.onload = () => {
-    displayPokemon(16); // Load initial Pokémon with 16 cards
-    window.addEventListener("scroll", checkScroll); // Add scroll listener
+    displayPokemon(16);
+    window.addEventListener("scroll", checkScroll);
 };
