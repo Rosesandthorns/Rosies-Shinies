@@ -275,6 +275,7 @@ const pokemonList = [
         imageUrl: "https://via.placeholder.com/200"
     }
 ];
+];
 
 function displayPokemon(count = 16) {
     const remaining = pokemonList.length - displayedPokemon;
