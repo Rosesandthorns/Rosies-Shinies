@@ -277,56 +277,61 @@ const pokemonList = [
     // Use the above format for adding shinies
 ];
 
-// Function to display each Pokémon card
-function displayPokemonCard(pokemon) {
-    const card = document.createElement("div");
-    card.classList.add("pokemon-card");
+function displayPokemon() {
+    pokemonContainer.innerHTML = "";  // Clear the container before adding new cards
 
-    card.innerHTML = `
-        <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-        <h3>${pokemon.nickname}</h3>
-        <p>${pokemon.species}</p>
-        <p>${pokemon.description}</p>
-    `;
+    for (let i = 0; i < pokemonList.length; i++) {
+        const pokemon = pokemonList[i];
+        const card = document.createElement("div");
+        card.classList.add("pokemon-card");
 
-    pokemonContainer.appendChild(card);
-}
+        card.innerHTML = `
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
+        `;
 
-// Function to load more Pokémon when the user scrolls to the bottom
-function loadMore() {
-    if (displayedPokemon < pokemonList.length) {
-        const cardsToShow = 10; // Number of cards to display at once
-        for (let i = displayedPokemon; i < displayedPokemon + cardsToShow; i++) {
-            if (i < pokemonList.length) {
-                displayPokemonCard(pokemonList[i]);
-            }
-        }
-        displayedPokemon += cardsToShow;
+        pokemonContainer.appendChild(card);
     }
 }
 
-// Function to filter Pokémon based on search query
 function filterPokemon() {
-    const searchQuery = document.getElementById("search").value.toLowerCase();
+    const searchQuery = searchInput.value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    // Reset displayed Pokémon count and clear current display
-    displayedPokemon = 0;
-    pokemonContainer.innerHTML = "";  // Clear current display
+    pokemonContainer.innerHTML = ""; // Clear the container before showing filtered cards
     filteredPokemon.forEach(pokemon => {
-        displayPokemonCard(pokemon);
+        const card = document.createElement("div");
+        card.classList.add("pokemon-card");
+
+        card.innerHTML = `
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
+        `;
+
+        pokemonContainer.appendChild(card);
     });
 }
 
-// Scroll event listener to detect when the user reaches the bottom of the page
-window.addEventListener("scroll", function() {
-    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-        loadMore();
-    }
-});
+// Load more cards on scroll (optimized for Safari and other browsers)
+function loadMoreOnScroll() {
+    window.addEventListener('scroll', function() {
+        const bottom = document.documentElement.scrollHeight === window.innerHeight + window.scrollY;
+        if (bottom) {
+            displayPokemon(); // Display more cards when the user reaches the bottom
+        }
+    });
+}
 
-// Initial load of Pokémon when the page is first opened
-window.onload = loadMore;
+window.onload = () => {
+    displayPokemon();  // Load initial cards
+    loadMoreOnScroll();  // Setup scroll event listener
+};
+
+searchInput.addEventListener("input", filterPokemon);  // Setup search functionality
