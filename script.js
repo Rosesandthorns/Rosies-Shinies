@@ -276,12 +276,13 @@ const pokemonList = [
     }
     // Use the above format for adding shinies
 ];
-
+// Function to display cards
 function displayPokemon() {
-    for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
-        if (i >= pokemonList.length) break;
-        const pokemon = pokemonList[i];
+    const numToDisplay = 2;
+    const end = displayedPokemon + numToDisplay;
+    const pokemonSubset = pokemonList.slice(displayedPokemon, end);
 
+    pokemonSubset.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
@@ -293,19 +294,20 @@ function displayPokemon() {
         `;
 
         pokemonContainer.appendChild(card);
-    }
-    displayedPokemon += 2;
+    });
+
+    displayedPokemon += numToDisplay;
 }
 
+// Search functionality
 function filterPokemon() {
-    const searchQuery = document.getElementById("search").value.toLowerCase();
+    const searchQuery = searchInput.value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    displayedPokemon = 0;
-    pokemonContainer.innerHTML = "";
+    pokemonContainer.innerHTML = "";  // Clear the container
     filteredPokemon.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -321,12 +323,11 @@ function filterPokemon() {
     });
 }
 
-window.addEventListener("scroll", () => {
-    const nearBottom = window.innerHeight + window.scrollY >= document.body.offsetHeight - 100;
+// Load more Pokémon when scrolling
+function loadMore() {
+    displayPokemon();
+}
 
-    if (nearBottom) {
-        displayPokemon();
-    }
-});
+window.onload = displayPokemon; // Display the first batch of Pokémon cards
 
-window.onload = displayPokemon;
+searchInput.addEventListener("input", filterPokemon);  // Bind search functionality
