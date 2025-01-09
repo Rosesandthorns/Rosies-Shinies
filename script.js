@@ -9,7 +9,7 @@ const pokemonList = [
         nickname: "Chop",
         species: "#475 - Gallade",
         description: "This Blue False Swiper Was Caught In Paldea",
-        imageUrl: "https://via.placeholder.com/200"
+        imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Gallade.webp"
     },
     {
         nickname: "Chedder",
