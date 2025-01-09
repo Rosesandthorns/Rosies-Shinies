@@ -277,30 +277,35 @@ const pokemonList = [
     // Use the above format for adding shinies
 ];
 
-function displayPokemon() {
-    for (let i = displayedPokemon; i < displayedPokemon + 2; i++) {
-        if (i >= pokemonList.length) break;
-        const pokemon = pokemonList[i];
+// Function to display each Pokémon card
+function displayPokemonCard(pokemon) {
+    const card = document.createElement("div");
+    card.classList.add("pokemon-card");
 
-        const card = document.createElement("div");
-        card.classList.add("pokemon-card");
+    card.innerHTML = `
+        <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+        <h3>${pokemon.nickname}</h3>
+        <p>${pokemon.species}</p>
+        <p>${pokemon.description}</p>
+    `;
 
-        card.innerHTML = `
-            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-            <h3>${pokemon.nickname}</h3>
-            <p>${pokemon.species}</p>
-            <p>${pokemon.description}</p>
-        `;
-
-        pokemonContainer.appendChild(card);
-    }
-    displayedPokemon += 2;
+    pokemonContainer.appendChild(card);
 }
 
+// Function to load more Pokémon when the user scrolls to the bottom
 function loadMore() {
-    displayPokemon();
+    if (displayedPokemon < pokemonList.length) {
+        const cardsToShow = 2; // Number of cards to display at once
+        for (let i = displayedPokemon; i < displayedPokemon + cardsToShow; i++) {
+            if (i < pokemonList.length) {
+                displayPokemonCard(pokemonList[i]);
+            }
+        }
+        displayedPokemon += cardsToShow;
+    }
 }
 
+// Function to filter Pokémon based on search query
 function filterPokemon() {
     const searchQuery = document.getElementById("search").value.toLowerCase();
     const filteredPokemon = pokemonList.filter(pokemon =>
@@ -309,20 +314,18 @@ function filterPokemon() {
     );
 
     displayedPokemon = 0;
-    pokemonContainer.innerHTML = "";
+    pokemonContainer.innerHTML = "";  // Clear current display
     filteredPokemon.forEach(pokemon => {
-        const card = document.createElement("div");
-        card.classList.add("pokemon-card");
-
-        card.innerHTML = `
-            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-            <h3>${pokemon.nickname}</h3>
-            <p>${pokemon.species}</p>
-            <p>${pokemon.description}</p>
-        `;
-
-        pokemonContainer.appendChild(card);
+        displayPokemonCard(pokemon);
     });
 }
 
-window.onload = displayPokemon;
+// Scroll event listener to detect when the user reaches the bottom of the page
+window.addEventListener("scroll", function() {
+    if (window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        loadMore();
+    }
+});
+
+// Initial load of Pokémon when the page is first opened
+window.onload = loadMore;
