@@ -313,7 +313,7 @@ function filterPokemon() {
 
     // Clear the container and reset displayed count
     pokemonContainer.innerHTML = "";
-    displayedPokemon = 0;
+    displayedPokemon = 10;
 
     // Display filtered Pokémon
     filteredPokemon.forEach(pokemon => {
