@@ -2,6 +2,7 @@ let pokemonData = [];
 let displayedPokemon = 0;
 
 const pokemonContainer = document.getElementById("pokemon-container");
+const searchInput = document.getElementById("search");
 
 const pokemonList = [
     {
@@ -275,7 +276,6 @@ const pokemonList = [
         imageUrl: "https://via.placeholder.com/200"
     }
 ];
-
 // Function to display Pokémon cards
 function displayPokemon(count = 16) {
     if (!pokemonContainer) {
@@ -313,8 +313,25 @@ function displayPokemon(count = 16) {
     displayedPokemon += toLoad;
 }
 
-let debounceTimer;
+// Function to filter Pokémon based on search input
+function filterPokemon() {
+    const filter = searchInput.value.toLowerCase();
+    pokemonContainer.innerHTML = '';
+    displayedPokemon = 0;
+    
+    const filteredList = pokemonList.filter(pokemon => 
+        pokemon.nickname.toLowerCase().includes(filter) ||
+        pokemon.species.toLowerCase().includes(filter) ||
+        pokemon.description.toLowerCase().includes(filter)
+    );
 
+    pokemonList.length = 0;
+    pokemonList.push(...filteredList);
+    displayPokemon(displayedPokemon);
+}
+
+// Improved debounce logic
+let debounceTimer;
 function checkScroll() {
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
@@ -324,15 +341,11 @@ function checkScroll() {
         if (scrollPosition >= bottomPosition - 200) {
             displayPokemon(16);
         }
-
-        const cards = document.querySelectorAll(".pokemon-card").length;
-        if (cards % 4 !== 0 || scrollPosition < window.innerHeight) {
-            displayPokemon(4 - (cards % 4));
-        }
-    }, 50); // Reduced debounce delay for smoother scrolling
+    }, 100); // Adjusted debounce delay for smoother scrolling
 }
 
 window.onload = () => {
     displayPokemon(16);
     window.addEventListener("scroll", checkScroll);
+    searchInput.addEventListener("input", filterPokemon);
 };
