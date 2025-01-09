@@ -271,12 +271,13 @@ const pokemonList = [
         species: "#0302 - Sableye",
         description: "This gem was found in Paldea",
         imageUrl: "https://via.placeholder.com/200"
-    },
+    }
     // Use the above format for adding shinies
 ];
-// Display Pokémon cards
+
+// Display Pokémon cards in batches
 function displayPokemon() {
-    const pokemonToShow = pokemonList.slice(displayedPokemon, displayedPokemon + 2);
+    const pokemonToShow = pokemonList.slice(displayedPokemon, displayedPokemon + 2); // Load 2 at a time
     pokemonToShow.forEach(pokemon => {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
@@ -290,7 +291,7 @@ function displayPokemon() {
 
         pokemonContainer.appendChild(card);
     });
-    displayedPokemon += pokemonToShow.length;
+    displayedPokemon += pokemonToShow.length; // Update displayed count
 }
 
 // Infinite scrolling
@@ -310,7 +311,7 @@ function filterPokemon() {
         pokemon.species.toLowerCase().includes(searchQuery)
     );
 
-    // Clear existing Pokémon
+    // Clear the container and reset displayed count
     pokemonContainer.innerHTML = "";
     displayedPokemon = 0;
 
