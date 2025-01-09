@@ -380,6 +380,16 @@ function deloadPokemon() {
     });
 }
 
+function deloadPokemon() {
+    const cards = document.querySelectorAll(".pokemon-card");
+    cards.forEach(card => {
+        const rect = card.getBoundingClientRect();
+        if (rect.bottom < -300 || rect.top > window.innerHeight + 300) {
+            card.remove();
+        }
+    });
+}
+
 let debounceTimer;
 
 function checkScroll() {
@@ -401,6 +411,11 @@ function checkScroll() {
         deloadPokemon();
     }, 50); // Reduced debounce delay for smoother scrolling
 }
+
+window.onload = () => {
+    displayPokemon(16);
+    window.addEventListener("scroll", checkScroll);
+};
 
 window.onload = () => {
     displayPokemon(16);
