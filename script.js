@@ -330,13 +330,24 @@ function displayPokemon(startIndex, count = 16) {
         return;
     }
 
-    const remaining = pokemonList.length - startIndex;
+    const searchQuery = searchInput.value.trim().toLowerCase();
+    let filteredPokemon = pokemonList;
+
+    if (searchQuery) {
+        filteredPokemon = originalPokemonList.filter(pokemon =>
+            pokemon.nickname.toLowerCase().includes(searchQuery) ||
+            pokemon.species.toLowerCase().includes(searchQuery) ||
+            (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
+        );
+    }
+
+    const remaining = filteredPokemon.length - startIndex;
     const loadCount = Math.min(count, remaining);
     const toLoad = Math.ceil(loadCount / 4) * 4;
 
     for (let i = startIndex; i < startIndex + toLoad; i++) {
-        if (i >= pokemonList.length) break;
-        const pokemon = pokemonList[i];
+        if (i >= filteredPokemon.length) break;
+        const pokemon = filteredPokemon[i];
 
         if (!pokemon || !pokemon.nickname || !pokemon.imageUrl) {
             console.warn(`Invalid data for Pokémon at index ${i}`, pokemon);
@@ -359,7 +370,7 @@ function displayPokemon(startIndex, count = 16) {
 
 // Function to filter Pokémon based on search input
 function filterPokemon() {
-    const searchQuery = document.getElementById("search").value.toLowerCase();
+    const searchQuery = searchInput.value.trim().toLowerCase();
 
     // Filter the Pokémon list based on the search query
     const filteredPokemon = originalPokemonList.filter(pokemon =>
@@ -397,8 +408,14 @@ function checkScroll() {
         const bottomPosition = document.documentElement.scrollHeight;
 
         if (scrollPosition >= bottomPosition - 200) {
-            displayPokemon(displayedPokemon, 16);
-            displayedPokemon += 16;
+            const searchQuery = searchInput.value.trim().toLowerCase();
+            const startIndex = displayedPokemon;
+            const count = 16;
+
+            if (!searchQuery) {
+                displayPokemon(startIndex, count);
+                displayedPokemon += count;
+            }
         }
     }, 100);
 }
