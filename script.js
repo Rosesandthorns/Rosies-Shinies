@@ -325,90 +325,90 @@ const pokemonList = [
         species: "#0325 - Spoink",
         description: "Bouncing all the way from Paldea",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["psychic", "SV"]
     },
     {
         nickname: "Grum",
         species: "#0326 - Grumpig",
         description: "A psychic pig from Paldea, neat",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["psychic", "SV"]
     {
         nickname: "Swab",
         species: "#0334 - Altaria",
         description: "How is this a dragon     From Paldea",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["flying", "dragon", "SV"]
     },
     {
         nickname: "Cory",
         species: "#031 - Corphish",
         description: "This Corphish was found in Kitakami",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["Water", "SV"]
     },
     {
         nickname: "Ivy",
         species: "#0373 - Salamance",
         description: "Palkias Weakness, from Paldea",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["dragon", "flying", "SV"]
     },
     {
         nickname: "Lightning",
         species: "#0403 - Shinx",
         description: "Shinx was my first shiny actually, back in Gen 4, anyways this one is from Paldea",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["electric", "SV"]
     },
     {
         nickname: "Static",
         species: "#0403 - Shinx",
         description: "From Paldea, nothing else to say",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["electric", "SV"]
     },
     {
         nickname: "Sparse",
         species: "#0418 - Buizel",
         description: "I got the name from the sparse reef in Subnatica, this one is from Paldea though",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["water", "SV"]
     },
     {
         nickname: "Savior",
         species: "#0418 - Buizel",
         description: "I barely remember this one, Paldea",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["water", "SV"]
     },
     {
         nickname: "Excadrill",
         species: "#0530 - Excadrill",
         description: "Excadrill",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["ground, steel", "SV"]
     },
     {
         nickname: "Dream",
         species: "#0570 - Zoura",
         description: "Found him in Paldea, disquised as a Maschiff",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["dark", "SV"]
     },
     {
         nickname: "Blueberry",
         species: "#0570 - Hisuian Zoira",
         description: "My first sucsessful masuda hunt, hatched in SV",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "Favourites", "SV"]
+        tags: ["ghost, normal", "Favourites", "SV"]
     },
     {
         nickname: "Nightmare",
         species: "#0571 - Zoroark",
         description: "Found haunting dreams in Paldea",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["", "SV"]
+        tags: ["dark", "SV"]
     },
   {
     nickname: "Mushrö",
