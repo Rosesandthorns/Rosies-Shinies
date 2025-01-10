@@ -319,7 +319,251 @@ const pokemonList = [
         description: "This gem was found in Paldea",
         imageUrl: "https://via.placeholder.com/200",
         tags: ["Dark", "Ghost", "SV"]
-    }
+    },
+    {
+        nickname: "Spoey",
+        species: "#0325 - Spoink",
+        description: "Bouncing all the way from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Grum",
+        species: "#0326 - Grumpig",
+        description: "A psychic pig from Paldea, neat",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    {
+        nickname: "Swab",
+        species: "#0334 - Altaria",
+        description: "How is this a dragon     From Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Cory",
+        species: "#031 - Corphish",
+        description: "This Corphish was found in Kitakami",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Ivy",
+        species: "#0373 - Salamance",
+        description: "Palkias Weakness, from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Lightning",
+        species: "#0403 - Shinx",
+        description: "Shinx was my first shiny actually, back in Gen 4, anyways this one is from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Static",
+        species: "#0403 - Shinx",
+        description: "From Paldea, nothing else to say",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Sparse",
+        species: "#0418 - Buizel",
+        description: "I got the name from the sparse reef in Subnatica, this one is from Paldea though",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Savior",
+        species: "#0418 - Buizel",
+        description: "I barely remember this one, Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Excadrill",
+        species: "#0530 - Excadrill",
+        description: "Excadrill",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Dream",
+        species: "#0570 - Zoura",
+        description: "Found him in Paldea, disquised as a Maschiff",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Blueberry",
+        species: "#0570 - Hisuian Zoira",
+        description: "My first sucsessful masuda hunt, hatched in SV",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "Favourites", "SV"]
+    },
+    {
+        nickname: "Nightmare",
+        species: "#0571 - Zoroark",
+        description: "Found haunting dreams in Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Mushrö",
+        species: "#0591 - Amoonguss",
+        description: "Caught this and 3 others in paldea in the span of 2 minutes",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Lunar",
+        species: "#0607 - Litwik",
+        description: "Found her in Kitakami",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Volcano",
+        species: "#0637 - Volcarona",
+        description: "Used to hatch eggs for me for a bit, from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Fletch",
+        species: "#0662 - Fletchinder",
+        description: "Also used to hatch eggs for me for a bit, From Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Lit",
+        species: "#0667 - Litleo",
+        description: "I have no memory of this - from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Pyroar",
+        species: "#0668 - Pyroar",
+        description: "Honestly I dont remember any of the pyroar line it would appear, from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Redemtion",
+        species: "#0672 - Skiddo",
+        description: "The brought back Paldean shiny",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Lil Leaf",
+        species: "#0672 - Skiddo",
+        description: "A skiddo a day keeps the sadness away, from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Momento",
+        species: "#0673 - Gogoat",
+        description: "I dont know why I named it is, I dont regret it though, from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Lucha",
+        species: "#0701 - Hawlucha",
+        description: "A wreastler at heart, from Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Token",
+        species: "#0706 - Goodra",
+        description: "My first shiny from a brand new game, caught on the release date of SV",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["". "Favourite", "SV"]
+    },
+    {
+        nickname: "Frost",
+        species: "#0713 - Avalugg",
+        description: "Why is the home model giant at the time of writing this, caught in Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Everest",
+        species: "#0713 - Hisuian Avalugg",
+        description: "Caught a bergmite in Paldea, evolved in Hisui",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["Ice", "Rock", "SV"]
+    },
+    {
+        nickname: "Morgan",
+        species: "#0730 - Prismarina",
+        description: "Caught him in Blueberry academy",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Zazu",
+        species: "#0733 - Toucannon",
+        description: "Bisexual bird, found at Blueberry Academy",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Chargi",
+        species: "#0737 - Charjabug",
+        description: "Caught in Kitakami, no history on this one",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Volt",
+        species: "#0738 - Vikavolt",
+        description: "Ace of my dlc team for SV",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["Favourites", "", "SV"]
+    },
+    {
+        nickname: "Brawler",
+        species: "#0739 - Crabrawler",
+        description: "Always looking for a fight, found in Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Kamal",
+        species: "#0740 - Crabominable",
+        description: "Never looking for a fight, Found in Blueberry Academy",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Cutie",
+        species: "#0742 - CUtiefly",
+        description: "So hard to see, yet such a nice shiny, Kitamaki",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Rocky",
+        species: "#0744 - Rockruff",
+        description: "No memory of this one :p, Paldea",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
+    {
+        nickname: "Marine",
+        species: "#0747 - Mareanie",
+        description: "While making this I realized Mareanie is a mix of Marine and Meanie...",
+        imageUrl: "https://via.placeholder.com/200",
+        tags: ["", "SV"]
+    },
 ];
 const originalPokemonList = [...pokemonList]; // Store original list
 
