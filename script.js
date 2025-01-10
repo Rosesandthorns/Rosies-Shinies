@@ -333,6 +333,7 @@ const pokemonList = [
         description: "A psychic pig from Paldea, neat",
         imageUrl: "https://via.placeholder.com/200",
         tags: ["psychic", "SV"]
+    },
     {
         nickname: "Swab",
         species: "#0334 - Altaria",
