@@ -80,7 +80,7 @@ const pokemonList = [
         species: "#0080 - Slowbro",
         description: "Grapé is just as slow as Slow, but looks like a grape, caught in Paldea",
         imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Slowbro.png",
-        tags: ["Water", "Psychic","SV"]
+        tags: ["Water", "Psychic", "SV"]
     },
     {
         nickname: "Clover",
