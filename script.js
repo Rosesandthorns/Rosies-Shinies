@@ -73,7 +73,7 @@ const pokemonList = [
         species: "#0079 - Slowpoke",
         description: "This Simple Creature Was Caught In Paldea",
         imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Slow.png",
-        tags: ["Water" "Psychic", "SV"]
+        tags: ["Water", "Psychic", "SV"]
     },
     {
         nickname: "Grapé",
