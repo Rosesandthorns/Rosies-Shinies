@@ -563,140 +563,140 @@ const pokemonList = [
     species: "#0748 - Toxapex",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "Poison", "SV"]
     },
     {
     nickname: "Salandit",
     species: "#0757 - Salandit",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fire", "Poison", "SV"]
     },
     {
     nickname: "Ghosty",
     species: "#0769 - Sandygast",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ground", "Ghost", "SV"]
     },
     {
     nickname: "Shinyghast",
     species: "#0769 - Sandygast",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ground", "Ghost", "SV"]
     },
     {
     nickname: "Sandy",
     species: "#0770 - Palossand",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ground", "Ghost", "SV"]
     },
     {
     nickname: "Starlight",
     species: "#0774 - Minior",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Rock", "Flying", "SV"]
     },
     {
     nickname: "Biter",
     species: "#0833 - Chewtle",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Dred",
     species: "#0834 - Drednaw",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Lactose",
     species: "#0868 - Milcery",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fairy", "SV"]
     },
     {
     nickname: "Waddles",
     species: "#0915 - Lechonk",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Normal", "SV"]
     },
     {
     nickname: "Oinky",
     species: "#0916 - oinkologne",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Normal", "SV"]
     },
     {
     nickname: "Webber",
     species: "#0917 - tarountula",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "SV"]
     },
     {
     nickname: "Silky",
     species: "#0917 - tarountula",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "SV"]
     },
     {
     nickname: "Spiderman",
     species: "# - ",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "SV"]
     },
     {
     nickname: "Kicks",
     species: "#0920 - lokix",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "Dark", "SV"]
     },
     {
     nickname: "Paw",
     species: "#0922 - Pawmo",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Electric", "Dark", "SV"]
     },
     {
     nickname: "Smiles",
     species: "#0942 - Maschiff",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Dark", "SV"]
     },
     {
     nickname: "Twig",
     species: "#0946 - Bramblin",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ghost", "Grass", "SV"]
     },
     {
     nickname: "Toed",
     species: "#0948 - Toedscool",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Grass", "Ground", "SV"]
     },
     {
     nickname: "scruel",
     species: "#0949 - Toedscruel",
     description: "The name is not missing a capital, I don't know why either",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Grass", "ground", "SV"]
     },
     {
     nickname: "Jolly",
