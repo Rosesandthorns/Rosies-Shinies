@@ -1,3 +1,4 @@
+/* Existing styles */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
@@ -53,4 +54,10 @@ input[type="text"] {
 .pokemon-card p {
     font-size: 1rem;
     color: #666;
+}
+
+@media (max-width: 600px) {
+    .pokemon-card {
+        width: calc(100% - 20px); /* Full width minus margin on small screens */
+    }
 }
