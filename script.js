@@ -703,315 +703,315 @@ const pokemonList = [
     species: "#0950 - Klawf",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Rock", "SV"]
     },
     {
     nickname: "Seeds",
     species: "#0951 - Capsakid",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Grass", "SV"]
     },
     {
     nickname: "Scorch",
     species: "#0952 - Scovillan",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Grass", "Fire", "SV"]
     },
     {
     nickname: "Richy",
     species: "#0953 - Rellor",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "SV"]
     },
     {
     nickname: "Acient",
     species: "#0954 - Rabsca",
     description: "I don't know how I mispelled 'ancient' so much",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "Psychic", "SV"]
     },
     {
     nickname: "Spinny",
     species: "#0955 - Flittle",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Psychic", "SV"]
     },
     {
     nickname: "Karen",
     species: "#0956 - Espathra",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Psychic", "SV"]
     },
     {
     nickname: "Peral",
     species: "#0963 - Finizen",
-    description: "Placeholder",
+    description: "I couldn't spell apparently...",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "zen",
     species: "#0963 - Finizen",
-    description: "Placeholder",
+    description: "Why and how is it not capitalized",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Splash",
     species: "#0964 - Palafin",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Speds",
     species: "#0965 - Varoom",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Poison", "Steel", "SV"]
     },
     {
     nickname: "Orth",
     species: "#0968 - Orthworm",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Steel", "SV"]
     },
     {
     nickname: "Amigo",
     species: "#0973 - Flamigo",
-    description: "Placeholder",
+    description: "Why is this fighting type? Caught in SV",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Flying", "Fighting", "SV"]
     },
     {
     nickname: "Amend",
     species: "#0976 - Veluza",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Dozo",
     species: "#0977 - Dondozo",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Sushie",
     species: "#0978 - Tatsugiri",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "Dragon", "SV"]
     },
     {
     nickname: "Spook",
     species: "#0979 - Annihilape",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ghost", "Fighting", "SV"]
     },
     {
     nickname: "Fari",
     species: "#0981 - Farigiraf",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Normal", "SV"]
     },
     {
     nickname: "Dudun",
     species: "#0982 - Dudunsparce",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Normal", "SV"]
     },
     {
     nickname: "Sharpie",
     species: "#0983 - Kingambit",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Dark", "Steel", "SV"]
     },
     {
     nickname: "Silver",
     species: "#0990 - Iron Treads",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Steel", "Ground", "SV"]
     },
     {
     nickname: "Chrome",
     species: "#0991 - Iron Bundle",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ice", "Water", "SV"]
     },
     {
     nickname: "Warrior",
     species: "#0992 - Iron Hands",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fighting", "Electric", "SV"]
     },
     {
     nickname: "lantern",
     species: "#0993 - Iron Jugulis",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Dark", "Flying", "SV"]
     },
     {
     nickname: "Mothlight",
     species: "#0994 - Iron Moth",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fire", "Poison", "SV"]
     },
     {
     nickname: "Thorns",
     species: "#0995 - Iron Throns",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Rock", "Electric", "SV"]
     },
     {
     nickname: "Gimmi",
     species: "#0999 - Gimmighoul",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ghost", "SV"]
     },
     {
     nickname: "Ribben",
     species: "#1006 - Iron Valiant",
     description: "I am just noticing i spelt Ribbon wrong over 2 years later",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fairy", "Fighting", "SV"]
     },
     {
     nickname: "Syrup",
     species: "#1011 - Dipplin",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Dragon", "Grass", "SV"]
     },
     {
     nickname: "Staples",
     species: "#1018 - Archaludon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Steel", "Dragom", "SV"]
     },
     {
     nickname: "Si-fi",
     species: "#0055 - Golduck",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Jade",
     species: "#0067 - Machoke",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fighting", "PLA"]
     },
     {
     nickname: "Bolt",
     species: "#0081 - Magnemite",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Electric", "Steel", "SV"]
     },
     {
     nickname: "Jean",
     species: "#0112 - Rhydon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Ground", "Rock", "SV"]
     },
     {
     nickname: "Dice",
     species: "#0123 - Scyther",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "Flying", "SV"]
     },
     {
     nickname: "Flip",
     species: "#0129 - Magikarp",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "SV"]
     },
     {
     nickname: "Legendary",
     species: "#0130 - Gyarados",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Water", "Flying", "SV"]
     },
     {
     nickname: "Snowy",
     species: "#0133 - Eevee",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Normal", "SV"]
     },
     {
     nickname: "Jolt",
     species: "#0135 - jolteon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Electric", "SV"]
     },
     {
     nickname: "Static",
     species: "#0103 - Porygon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Normal", "SV"]
     },
     {
     nickname: "Snorlax",
     species: "#0143 - Snorlax",
     description: "This Snorlax was my first SwSh shiny",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SwSh"]
+    tags: ["Normal", "SwSh"]
     },
     {
     nickname: "Puff",
     species: "#01 - ",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Fairy", "PLA"]
     },
     {
     nickname: "Eve",
     species: "#0196 - Espeon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Psychic", "SV"]
     },
     {
     nickname: "Midnight",
     species: "#0197 - Umbreon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Dark", "SV"]
     },
     {
     nickname: "Slice",
     species: "#0212 - Scizor ",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["", "", "SV"]
+    tags: ["Bug", "Steel", "SV"]
     },
 ];
 const originalPokemonList = [...pokemonList]; // Store original list
