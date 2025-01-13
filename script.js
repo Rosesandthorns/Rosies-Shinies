@@ -1285,7 +1285,7 @@ const pokemonList = [
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Water", "Bug", "SwSh"]
-    },
+    }
 ];
 const originalPokemonList = [...pokemonList]; // Store original list
 
