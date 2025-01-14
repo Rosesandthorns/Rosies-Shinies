@@ -7,9 +7,18 @@ const searchInput = document.getElementById("search");
 function updatePokemonCount(count) {
     const countElement = document.getElementById("pokemon-count");
     if (countElement) {
-        countElement.textContent = `Displaying ${count}/989 Pokémon`;
+        countElement.textContent = `Displaying ${count}/${pokemonList.length} Pokémon`;
     }
 }
+
+function updateTotalPokemonCount() {
+    const totalCountElement = document.getElementById("total-pokemon-count");
+    if (totalCountElement) {
+        const uniquePokemon = new Set(pokemonList.map(pokemon => pokemon.species)).size;
+        totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}/989`;
+    }
+}
+
 
 const pokemonList = [
     {
@@ -1695,14 +1704,6 @@ function checkScroll() {
             }
         }
     }, 100);
-}
-
-function updateTotalPokemonCount() {
-    const totalCountElement = document.getElementById("total-pokemon-count");
-    if (totalCountElement) {
-        const uniquePokemon = new Set(pokemonList.map(pokemon => pokemon.species)).size;
-        totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}`;
-    }
 }
 
 // Initial load
