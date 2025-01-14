@@ -61,3 +61,10 @@ input[type="text"] {
         width: calc(100% - 20px); /* Full width minus margin on small screens */
     }
 }
+
+#pokemon-count {
+    text-align: center;
+    margin-top: 10px;
+    font-size: 1.2rem;
+    color: #333;
+}
