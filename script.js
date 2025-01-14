@@ -1285,6 +1285,307 @@ const pokemonList = [
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Water", "Bug", "SwSh"]
+    },
+    {
+    nickname: "Tock",
+    species: "#0962 - Bombirder",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Flying", "SV"]
+    },
+    {
+    nickname: "Earl Grey",
+    species: "#0854 - Authentic Sinistea",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "SV"]
+    },
+    {
+    nickname: "Bronze",
+    species: "#0823 - Corviknight",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Flying", "Steel", "SV"]
+    },
+    {
+    nickname: "Bronze",
+    species: "#0823 - Corviknight",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Flying", "Steel", "SV"]
+    },
+    {
+    nickname: "Lime",
+    species: "#0027 - Sandshrew",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ground", "SV"]
+    },
+    {
+    nickname: "Naught",
+    species: "#0074 - Geodude",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Rock", "Ground", "SV"]
+    },
+    {
+    nickname: "Pink",
+    species: "#0147 - Dratini",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dragon", "SV"]
+    },
+    {
+    nickname: "Blue",
+    species: "#0167 - Spinarak",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Bug", "Poison", "SV"]
+    },
+    {
+    nickname: "Moonbound",
+    species: "#0216 - Teddiursa",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Normal", "SV"]
+    },
+    {
+    nickname: "Deli",
+    species: "#0225 - Delibird",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ice", "Flying", "SV"]
+    },
+    {
+    nickname: "Flya",
+    species: "#0330 - Flygon",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ground", "Dragon", "SV"]
+    },
+    {
+    nickname: "Uranium",
+    species: "#0436 - Bronzor",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Steel", "Psychic", "SV"]
+    },
+    {
+    nickname: "Claw",
+    species: "#0693 - Clawitzer",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Water", "SV"]
+    },
+    {
+    nickname: "Bannana",
+    species: "#0810 - Grookey",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "SV"]
+    },
+    {
+    nickname: "Chilly",
+    species: "#0875 - Eiscue",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ice", "SV"]
+    },
+    {
+    nickname: "Jessica",
+    species: "#0195 - Quagsire",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Water", "Ground", "SV"]
+    },
+    {
+    nickname: "Fauna",
+    species: "#0357 - Tropius",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "Flying", "SV"]
+    },
+    {
+    nickname: "Pawn",
+    species: "#0624 - Pawniard",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Steel", "SV"]
+    },
+    {
+    nickname: "Apple Pie",
+    species: "#0842 - Appletun",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "Dragon", "SV"]
+    },
+    {
+    nickname: "Derpy",
+    species: "#0928 - Smoliv",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "Normal", "SV"]
+    },
+    {
+    nickname: "Char-Chi",
+    species: "#0935 - Charcadet",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Fire", "SV"]
+    },
+    {
+    nickname: "Purple",
+    species: "#0943 - Mabosstiff",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "SV"]
+    },
+    {
+    nickname: "Phantom",
+    species: "#0442 - Spiritomb",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "Dark", "Favourite", "SV"]
+    },
+    {
+    nickname: "Energy",
+    species: "#0100 - Hisuian Voltorb",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "Electric", "SV"]
+    },
+    {
+    nickname: "Beryl",
+    species: "#0246 - Larvitar",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Rock", "Ground", "SV"]
+    },
+    {
+    nickname: "Flame",
+    species: "#0608 - Lamoert",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "Fire", "SV"]
+    },
+    {
+    nickname: "Nosey",
+    species: "#0299 - Nosepass",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Rock", "SV"]
+    },
+    {
+    nickname: "Cloak",
+    species: "#0361 - Snorunt",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ice", "SV"]
+    },
+    {
+    nickname: "Compass",
+    species: "#0476 - Probopass",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Rock", "Steel", "SV"]
+    },
+    {
+    nickname: "Dasie",
+    species: "#0970 - Glimmora",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Rock", "Poison", "SV"]
+    },
+    {
+    nickname: "Electrode",
+    species: "#0101 - Hisuian Electrode",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Electric", "Grass", "SV"]
+    },
+    {
+    nickname: "Rufflet",
+    species: "#0627 - Rufflet",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Normal", "Flying", "Pla"]
+    },
+    {
+    nickname: "Abra",
+    species: "#0063 - Abra",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Psychic", "PLA"]
+    },
+    {
+    nickname: "Kadabra",
+    species: "#0064 - Kadabra",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Psychic", "PLA"]
+    },
+    {
+    nickname: "Chance",
+    species: "#0133 - Chansey",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Normal", "SV"]
+    },
+    {
+    nickname: "Flop",
+    species: "#0130 - Gyarados",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Water", "Flying", "SV"]
+    },
+    {
+    nickname: "Darky",
+    species: "#0198 - Murkrow",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Flying", "SV"]
+    },
+    {
+    nickname: "Floaté",
+    species: "#0419 - Floatzel",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Flying", "SV"]
+    },
+    {
+    nickname: "Krow",
+    species: "#0430 - Honchkrow",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Flying", "SV"]
+    },
+    {
+    nickname: "Lemon",
+    species: "#0463 - Lickilicky",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Normal", "PLA"]
+    },
+    {
+    nickname: "Shade",
+    species: "#0092 - Ghastly",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "Poison", "Pla"]
+    },
+    {
+    nickname: "Gul",
+    species: "#0316 - Gulpin",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Poison", "SV"]
+    },
+    {
+    nickname: "Twig",
+    species: "#0387 - Turtwig",
+    description: "Plaeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "SV"]
     }
 ];
 const originalPokemonList = [...pokemonList]; // Store original list
