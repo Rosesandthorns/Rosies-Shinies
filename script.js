@@ -7,7 +7,7 @@ const searchInput = document.getElementById("search");
 function updatePokemonCount(count) {
     const countElement = document.getElementById("pokemon-count");
     if (countElement) {
-        countElement.textContent = `Displaying ${count} Pokémon`;
+        countElement.textContent = `Displaying ${count}/989 Pokémon`;
     }
 }
 
