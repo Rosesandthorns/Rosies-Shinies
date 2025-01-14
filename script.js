@@ -4,6 +4,13 @@ let displayedPokemon = 0;
 const pokemonContainer = document.getElementById("pokemon-container");
 const searchInput = document.getElementById("search");
 
+function updatePokemonCount(count) {
+    const countElement = document.getElementById("pokemon-count");
+    if (countElement) {
+        countElement.textContent = `Displaying ${count} Pokémon`;
+    }
+}
+
 const pokemonList = [
     {
         nickname: "Chop",
@@ -1590,7 +1597,6 @@ const pokemonList = [
 ];
 const originalPokemonList = [...pokemonList]; // Store original list
 
-// Function to display Pokémon cards
 function displayPokemon(startIndex, count = 16) {
     if (!pokemonContainer) {
         console.error("Pokemon container element not found!");
@@ -1633,6 +1639,8 @@ function displayPokemon(startIndex, count = 16) {
 
         pokemonContainer.appendChild(card);
     }
+
+    updatePokemonCount(filteredPokemon.length);
 }
 
 // Function to filter Pokémon based on search input
@@ -1664,6 +1672,8 @@ function filterPokemon() {
 
         pokemonContainer.appendChild(card);
     });
+
+    updatePokemonCount(filteredPokemon.length);
 }
 
 // Improved debounce logic
@@ -1693,4 +1703,5 @@ window.onload = () => {
     displayedPokemon += 16;
     window.addEventListener("scroll", checkScroll);
     searchInput.addEventListener("input", filterPokemon);
+    updatePokemonCount(pokemonList.length);
 };
