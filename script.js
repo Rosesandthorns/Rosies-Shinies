@@ -1697,6 +1697,14 @@ function checkScroll() {
     }, 100);
 }
 
+function updateTotalPokemonCount() {
+    const totalCountElement = document.getElementById("total-pokemon-count");
+    if (totalCountElement) {
+        const uniquePokemon = new Set(pokemonList.map(pokemon => pokemon.species)).size;
+        totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}`;
+    }
+}
+
 // Initial load
 window.onload = () => {
     displayPokemon(0, 16);
@@ -1704,4 +1712,5 @@ window.onload = () => {
     window.addEventListener("scroll", checkScroll);
     searchInput.addEventListener("input", filterPokemon);
     updatePokemonCount(pokemonList.length);
+    updateTotalPokemonCount(); // Call the function to update the total Pokémon count
 };
