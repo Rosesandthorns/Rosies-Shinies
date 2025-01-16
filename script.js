@@ -667,7 +667,7 @@ const pokemonList = [
     },
     {
     nickname: "Spiderman",
-    species: "# - ",
+    species: "#918 - Spidops",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Bug", "SV"]
