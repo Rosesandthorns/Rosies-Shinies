@@ -14,9 +14,12 @@ function updatePokemonCount(count) {
 function updateTotalPokemonCount() {
     const totalCountElement = document.getElementById("total-pokemon-count");
     if (totalCountElement) {
-        const uniquePokemon = new Set(pokemonList.map(pokemon => pokemon.species)).size;
+        const uniquePokemon = new Set(pokemonList.map(pokemon => 
+            pokemon.species.replace(/(Hisuian|Galarian|Paldean|Alolan)\s+/i, '')
+        )).size;
         totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}/989`;
     }
+}
 }
 
 
