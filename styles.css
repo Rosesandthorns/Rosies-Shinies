@@ -101,8 +101,9 @@ input[type="text"] {
 .tag.bug { background-color: #9dbf3d; color: black; }
 .tag.psychic { background-color: #963dbf; }
 .tag.favourite { background-color: #fcfc1e; color: black; }
-.tag.rock { background-color: #4d2408; }
-.tag.paradox { background-color: #db8f32; }
+.tag.rock { background-color: #4d2408; color: white; }
+.tag.ground { background-color: #8b4513; color: white; }
+.tag.paradox { background-color: #db8f32; color: white; }
 .tag.starter {
     background: linear-gradient(to right, #22cdd6, #22d622, #e81d02);
     color: white;
