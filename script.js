@@ -419,7 +419,7 @@ const pokemonList = [
         species: "#0570 - Hisuian Zoira",
         description: "My first sucsessful masuda hunt, hatched in SV",
         imageUrl: "https://via.placeholder.com/200",
-        tags: ["ghost, normal", "Favourites", "SV"]
+        tags: ["Ghost", "normal", "Favourite", "SV"]
     },
     {
         nickname: "Nightmare",
