@@ -2307,11 +2307,14 @@ function displayPokemon(startIndex, count = 16) {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
+        const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`).join(' ');
+
         card.innerHTML = `
             <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
             <h3>${pokemon.nickname}</h3>
             <p>${pokemon.species}</p>
             <p>${pokemon.description}</p>
+            <div class="tags">${tagsHtml}</div>
         `;
 
         pokemonContainer.appendChild(card);
