@@ -111,7 +111,7 @@ input[type="text"] {
 .tag.ice { background-color: #aef2e5; color: black; }
 .tag.fossil { background-color: #452d1c; color: white; }
 .tag.legendary { background-color: #d435b1; }
-.tag['ultra-beast'] { background-color: #827f7c; color: white; }
+.tag.ultra-beast { background-color: #827f7c; color: white; }
 .tag.normal { background-color: #d3d3d3; color: black; }
 .tag.alpha { background-color: #fa0505; }
 .tag.lgpe { background-color: #fae105; color: black; }
