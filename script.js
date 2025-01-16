@@ -20,8 +20,6 @@ function updateTotalPokemonCount() {
         totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}/989`;
     }
 }
-}
-
 
 const pokemonList = [
     {
