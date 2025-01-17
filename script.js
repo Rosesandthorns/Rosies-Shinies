@@ -108,7 +108,7 @@ const pokemonList = [
     },
     {
         nickname: "Dodrio, Formally Lucky",
-        species: "#0085 - Dotrio",
+        species: "#0085 - Dodrio",
         description: "My first caught shiny, caught in PoGo",
         imageUrl: "https://github.com/Rosesandthorns/Rosies-Shinies/blob/main/images/Lucky.png",
         tags: ["Normal", "Flying", "PoGo", "Favourite"]
@@ -206,7 +206,7 @@ const pokemonList = [
     },
     {
         nickname: "Shine",
-        species: "#0183 - Maril",
+        species: "#0183 - Marill",
         description: "this green orb was caught in Paldea, do you think you can use it to awaken Primal Rayquaza?",
         imageUrl: "https://via.placeholder.com/200",
         tags: ["Water", "Fairy", "SV"]
@@ -892,7 +892,7 @@ const pokemonList = [
     },
     {
     nickname: "Thorns",
-    species: "#0995 - Iron Throns",
+    species: "#0995 - Iron Thorns",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Rock", "Electric", "SV"]
@@ -923,7 +923,7 @@ const pokemonList = [
     species: "#1018 - Archaludon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: ["Steel", "Dragom", "SV"]
+    tags: ["Steel", "Dragon", "SV"]
     },
     {
     nickname: "Si-fi",
@@ -983,7 +983,7 @@ const pokemonList = [
     },
     {
     nickname: "Jolt",
-    species: "#0135 - jolteon",
+    species: "#0135 - Jolteon",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Electric", "SV"]
