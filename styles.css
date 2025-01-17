@@ -100,7 +100,10 @@ input[type="text"] {
 .tag.steel { background-color: #6e6760; }
 .tag.bug { background-color: #9dbf3d; color: black; }
 .tag.psychic { background-color: #963dbf; }
-.tag.favourite { background-color: #fcfc1e; color: black; }
+.tag.favourite {
+    background: linear-gradient(to right, #ffbf0f, #fff30f, #fcf792);
+    color: black;
+}
 .tag.rock { background-color: #4d2408; color: white; }
 .tag.ground { background-color: #8b4513; color: white; }
 .tag.paradox { background-color: #db8f32; color: white; }
