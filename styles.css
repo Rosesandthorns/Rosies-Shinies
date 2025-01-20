@@ -31,39 +31,51 @@ input[type="text"] {
     display: block;
 }
 
+/* Container for the Pokémon cards */
 #pokemon-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center; /* Center align cards */
     margin-top: 20px;
+    padding: 0 16px; /* Add padding to the container */
 }
 
+/* Individual card styling */
 .pokemon-card {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    margin: 10px;
+    margin: 10px; /* Space between cards */
     text-align: center;
     padding: 15px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px; /* Fixed width for consistency */
+    max-width: calc(100% - 20px); /* Ensure responsiveness */
+    overflow: hidden; /* Prevent content overflow */
 }
 
+/* Pokémon images */
 .pokemon-card img {
-    width: 100%;
-    border-radius: 8px;
+    width: 100%; /* Ensure the image fills the card */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 150px; /* Optional: limit image height */
+    border-radius: 8px; /* Rounded edges */
 }
 
+/* Pokémon name */
 .pokemon-card h3 {
     font-size: 1.2rem;
     font-weight: bold;
     margin: 10px 0;
 }
 
+/* Pokémon species and description */
 .pokemon-card p {
     font-size: 1rem;
     color: #666;
 }
 
+/* Responsive adjustments */
 @media (max-width: 600px) {
     .pokemon-card {
         width: calc(100% - 20px); /* Full width minus margin on small screens */
