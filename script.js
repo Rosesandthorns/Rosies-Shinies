@@ -1,4 +1,3 @@
-let pokemonData = [];
 let displayedPokemon = 0;
 
 const pokemonContainer = document.getElementById("pokemon-container");
@@ -3144,10 +3143,28 @@ const pokemonList = [
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Grass", "Fighting", "Legendary", "SwSh"]
     }
-];
+const originalPokemonList = [...pokemonList]; // Store original list
 
-const originalPokemonList = [...pokemonList]; // Store the original list
+// Update the displayed count
+function updatePokemonCount(count) {
+    const countElement = document.getElementById("pokemon-count");
+    if (countElement) {
+        countElement.textContent = `Displaying ${count} Pokémon`;
+    }
+}
 
+// Update the total unique Pokémon count
+function updateTotalPokemonCount() {
+    const totalCountElement = document.getElementById("total-pokemon-count");
+    if (totalCountElement) {
+        const uniquePokemon = new Set(pokemonList.map(pokemon =>
+            pokemon.species.replace(/(Hisuian|Galarian|Paldean|Alolan)\s+/i, '')
+        )).size;
+        totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}/989`;
+    }
+}
+
+// Function to display Pokémon cards
 function displayPokemon(startIndex, count = 16) {
     if (!pokemonContainer) {
         console.error("Pokemon container element not found!");
@@ -3158,7 +3175,7 @@ function displayPokemon(startIndex, count = 16) {
     let filteredPokemon = pokemonList;
 
     if (searchQuery) {
-        filteredPokemon = pokemonList.filter(pokemon =>
+        filteredPokemon = originalPokemonList.filter(pokemon =>
             pokemon.nickname.toLowerCase().includes(searchQuery) ||
             pokemon.species.toLowerCase().includes(searchQuery) ||
             (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
@@ -3167,9 +3184,8 @@ function displayPokemon(startIndex, count = 16) {
 
     const remaining = filteredPokemon.length - startIndex;
     const loadCount = Math.min(count, remaining);
-    const toLoad = Math.ceil(loadCount / 4) * 4;
 
-    for (let i = startIndex; i < startIndex + toLoad; i++) {
+    for (let i = startIndex; i < startIndex + loadCount; i++) {
         if (i >= filteredPokemon.length) break;
         const pokemon = filteredPokemon[i];
 
@@ -3197,11 +3213,11 @@ function displayPokemon(startIndex, count = 16) {
     updatePokemonCount(filteredPokemon.length);
 }
 
+// Function to filter Pokémon based on search input
 function filterPokemon() {
     const searchQuery = searchInput.value.trim().toLowerCase();
 
-    // Filter the Pokémon list based on the search query
-    const filteredPokemon = pokemonList.filter(pokemon =>
+    const filteredPokemon = originalPokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery) ||
         (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
@@ -3232,6 +3248,7 @@ function filterPokemon() {
     updatePokemonCount(filteredPokemon.length);
 }
 
+// Improved debounce logic for infinite scroll
 let debounceTimer;
 function checkScroll() {
     clearTimeout(debounceTimer);
@@ -3252,15 +3269,13 @@ function checkScroll() {
     }, 100);
 }
 
-// Initial load for showcase page
+// Initial load
 window.onload = () => {
-    if (window.location.pathname.includes("index.html")) {
-        displayPokemon(0, 16);  // Load first 16 Pokémon on the showcase page
-        displayedPokemon += 16;
+    displayPokemon(0, 16);  // Load first 16 Pokémon on the showcase page
+    displayedPokemon += 16;
 
-        window.addEventListener("scroll", checkScroll);
-        searchInput.addEventListener("input", filterPokemon);
-        updatePokemonCount(pokemonList.length);
-        updateTotalPokemonCount(); // Update the total Pokémon count
-    }
+    window.addEventListener("scroll", checkScroll);
+    searchInput.addEventListener("input", filterPokemon);
+    updatePokemonCount(pokemonList.length);
+    updateTotalPokemonCount(); // Update the total Pokémon count
 };
