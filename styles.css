@@ -44,27 +44,34 @@ input[type="text"] {
 .pokemon-card {
     background-color: #fff;
     border: 1px solid #ccc;
-    border-radius: 8px;
-    margin: 10px; /* Space between cards */
+    border-radius: 12px; /* Slightly rounded corners for a "soft" look */
+    margin: 12px; /* Slightly larger margin */
     text-align: center;
-    padding: 15px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    width: 200px; /* Fixed width for consistency */
-    max-width: calc(100% - 20px); /* Ensure responsiveness */
+    padding: 20px; /* More padding for a spacious feel */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Softer shadow */
+    width: 240px; /* Increased size */
+    max-width: calc(100% - 24px); /* Ensure responsiveness */
     overflow: hidden; /* Prevent content overflow */
+    transition: transform 0.2s, box-shadow 0.2s; /* Add hover animation */
+}
+
+/* Hover effect for "bubbly" feel */
+.pokemon-card:hover {
+    transform: translateY(-5px); /* Slight lift */
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25); /* Stronger shadow on hover */
 }
 
 /* Pokémon images */
 .pokemon-card img {
     width: 100%; /* Ensure the image fills the card */
     height: auto; /* Maintain aspect ratio */
-    max-height: 150px; /* Optional: limit image height */
-    border-radius: 8px; /* Rounded edges */
+    max-height: 170px; /* Optional: limit image height */
+    border-radius: 12px; /* Rounded edges for images */
 }
 
 /* Pokémon name */
 .pokemon-card h3 {
-    font-size: 1.2rem;
+    font-size: 1.4rem; /* Slightly larger font */
     font-weight: bold;
     margin: 10px 0;
 }
@@ -78,7 +85,7 @@ input[type="text"] {
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .pokemon-card {
-        width: calc(100% - 20px); /* Full width minus margin on small screens */
+        width: calc(100% - 24px); /* Full width minus margin on small screens */
     }
 }
 
