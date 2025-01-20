@@ -5,8 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Rosie's Shiny Pokémon</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"/>
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -88,11 +86,6 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-        footer a {
-            color: #22b5a4;
-            text-decoration: none;
-            font-weight: bold;
-        }
     </style>
 </head>
 <body>
@@ -138,23 +131,10 @@
 
     <footer>
         <p>© 2025 Rosie's Shiny Pokémon. All rights reserved.</p>
-        <p>Visit our <a href="index.html">Showcase</a> or follow us for more updates!</p>
     </footer>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
-                dots: true,
-                arrows: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-
+        document.addEventListener('DOMContentLoaded', function() {
             // Pokémon data (replace this with the data from script.js)
             const pokemonList = [
                 { nickname: "Shiny Charmander", imageUrl: "images/charmander.png", type: "Fire" },
@@ -169,19 +149,27 @@
 
             function displayDailyFeaturedPokemon() {
                 const dailyPokemon = getRandomPokemon();
-                $('#daily-featured').html(`
+                document.getElementById('daily-featured').innerHTML = `
                     <div class="card">
                         <img src="${dailyPokemon.imageUrl}" alt="${dailyPokemon.nickname}">
                         <h3>${dailyPokemon.nickname}</h3>
                         <p>Type: ${dailyPokemon.type}</p>
                     </div>
-                `);
+                `;
+            }
+
+            // Check if the next feature time is already set in localStorage
+            let nextFeatureTime = localStorage.getItem('nextFeatureTime');
+            if (!nextFeatureTime) {
+                // Set the next feature time to 24 hours from now if not already set
+                nextFeatureTime = Date.now() + 24 * 60 * 60 * 1000;
+                localStorage.setItem('nextFeatureTime', nextFeatureTime);
             }
 
             // Display the daily featured Pokémon and set the timer
             displayDailyFeaturedPokemon();
+
             const timerElement = document.getElementById('timer');
-            const nextFeatureTime = new Date(Date.now() + 24 * 60 * 60 * 1000);
             const countdownInterval = setInterval(() => {
                 const now = new Date();
                 const diff = nextFeatureTime - now;
@@ -189,6 +177,8 @@
                 if (diff <= 0) {
                     clearInterval(countdownInterval);
                     timerElement.textContent = 'Time for a new Pokémon!';
+                    // Reset the next feature time after 24 hours
+                    localStorage.setItem('nextFeatureTime', Date.now() + 24 * 60 * 60 * 1000);
                 } else {
                     const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
                     const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
@@ -199,13 +189,13 @@
 
             function displayRandomFeaturedPokemon() {
                 const randomPokemon = getRandomPokemon();
-                $('#random-featured').html(`
+                document.getElementById('random-featured').innerHTML = `
                     <div class="card">
                         <img src="${randomPokemon.imageUrl}" alt="${randomPokemon.nickname}">
                         <h3>${randomPokemon.nickname}</h3>
                         <p>Type: ${randomPokemon.type}</p>
                     </div>
-                `);
+                `;
             }
 
             // Display the random featured Pokémon on page load
