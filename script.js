@@ -3145,7 +3145,8 @@ const pokemonList = [
     tags: ["Grass", "Fighting", "Legendary", "SwSh"]
     }
 ];
-const originalPokemonList = [...pokemonList]; // Store original list
+
+const originalPokemonList = [...pokemonList]; // Store the original list
 
 function displayPokemon(startIndex, count = 16) {
     if (!pokemonContainer) {
@@ -3157,7 +3158,7 @@ function displayPokemon(startIndex, count = 16) {
     let filteredPokemon = pokemonList;
 
     if (searchQuery) {
-        filteredPokemon = originalPokemonList.filter(pokemon =>
+        filteredPokemon = pokemonList.filter(pokemon =>
             pokemon.nickname.toLowerCase().includes(searchQuery) ||
             pokemon.species.toLowerCase().includes(searchQuery) ||
             (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
@@ -3196,7 +3197,6 @@ function displayPokemon(startIndex, count = 16) {
     updatePokemonCount(filteredPokemon.length);
 }
 
-// Function to filter Pokémon based on search input
 function filterPokemon() {
     const searchQuery = searchInput.value.trim().toLowerCase();
 
@@ -3232,7 +3232,6 @@ function filterPokemon() {
     updatePokemonCount(filteredPokemon.length);
 }
 
-// Improved debounce logic
 let debounceTimer;
 function checkScroll() {
     clearTimeout(debounceTimer);
@@ -3253,6 +3252,7 @@ function checkScroll() {
     }, 100);
 }
 
+// Initial load for showcase page
 window.onload = () => {
     if (window.location.pathname.includes("index.html")) {
         displayPokemon(0, 16);  // Load first 16 Pokémon on the showcase page
@@ -3264,3 +3264,20 @@ window.onload = () => {
         updateTotalPokemonCount(); // Update the total Pokémon count
     }
 };
+3. Carousel Logic (Only for home.html)
+If you still want to use the carousel on home.html, make sure the carousel logic is in a section of your script that only runs on home.html. You can conditionally run the carousel code by checking the page path, like this:
+
+javascript
+Copy
+Edit
+if (window.location.pathname.includes("home.html")) {
+    // Initialize carousel here
+    $('#random-carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false
+    });
+}
