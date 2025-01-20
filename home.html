@@ -33,6 +33,11 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0 auto;
+            max-width: 600px;
+        }
         .section {
             padding: 40px 20px;
         }
@@ -59,10 +64,12 @@
             padding: 10px 0;
             margin-top: 20px;
         }
-        footer a {
-            color: #22b5a4;
-            text-decoration: none;
-            font-weight: bold;
+
+        /* Timer Style */
+        #timer {
+            font-size: 1.5rem;
+            color: #fff;
+            margin-top: 20px;
         }
     </style>
 </head>
@@ -80,17 +87,27 @@
     </div>
 
     <main>
-        <!-- Introduction Section -->
-        <section class="section">
-            <h2>About Me</h2>
-            <p>Hi, my name is Rosie! I've spent hundreds of hours shiny hunting off-colored pixels, and I made this website to showcase them.</p>
+        <!-- Daily Featured Pokémon -->
+        <section class="section" id="daily-featured">
+            <h2>Daily Featured Pokémon</h2>
+            <div id="daily-featured-pokemon"></div>
+            <div id="timer"></div> <!-- Timer to show next swap -->
+        </section>
+
+        <!-- Randomly Featured Pokémon -->
+        <section class="section" id="random-featured">
+            <h2>Randomly Featured Pokémon</h2>
+            <div id="random-featured-pokemon"></div>
         </section>
 
         <!-- Featured Pokémon Carousel -->
         <section class="section">
             <h2>Featured Pokémon</h2>
-            <div class="carousel" id="featured-pokemon-carousel">
-                <!-- Pokémon cards will be dynamically inserted here -->
+            <div class="carousel">
+                <div><img src="images/pokemon1.png" alt="Shiny Pokémon 1"></div>
+                <div><img src="images/pokemon2.png" alt="Shiny Pokémon 2"></div>
+                <div><img src="images/pokemon3.png" alt="Shiny Pokémon 3"></div>
+                <!-- Add more Pokémon images here -->
             </div>
         </section>
 
@@ -99,49 +116,11 @@
     </main>
 
     <footer>
-        <p>© 2025 Rosie's Shiny Pokémon. All rights reserved.</p>
-        <p>Visit our <a href="index.html">Showcase</a> or follow us for more updates!</p>
+        <p>2025 Rosie's Shiny Pokémon. All rights reserved.</p>
     </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
     <script src="script.js"></script>
-    <script>
-        $(document).ready(function() {
-            // Load random Pokémon cards into the carousel
-            const featuredPokemon = getRandomPokemonCards(5); // Get 5 random Pokémon cards
-            const carousel = $('#featured-pokemon-carousel');
-
-            featuredPokemon.forEach(pokemon => {
-                const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`).join(' ');
-
-                const cardHtml = `
-                    <div class="pokemon-card">
-                        <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-                        <h3>${pokemon.nickname}</h3>
-                        <p>${pokemon.species}</p>
-                        <p>${pokemon.description}</p>
-                        <div class="tags">${tagsHtml}</div>
-                    </div>
-                `;
-                carousel.append(cardHtml);
-            });
-
-            carousel.slick({
-                dots: true,
-                arrows: false,
-                infinite: true,
-                speed: 300,
-                slidesToShow: 1,
-                autoplay: true,
-                autoplaySpeed: 3000
-            });
-        });
-
-        function getRandomPokemonCards(count) {
-            const shuffled = pokemonList.sort(() => 0.5 - Math.random());
-            return shuffled.slice(0, count); // Return the first 'count' random Pokémon
-        }
-    </script>
 </body>
 </html>
