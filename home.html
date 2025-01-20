@@ -9,13 +9,65 @@
     <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css"/>
     <style>
         body {
+            font-family: Arial, sans-serif;
             text-align: center;
+            margin: 0;
+            padding: 0;
+            background-color: #14a692;
+            color: #333;
         }
         .logo {
             display: block;
-            margin: 0 auto;
+            margin: 20px auto;
             max-width: 150px;
             height: auto;
+        }
+        .hero {
+            background-image: url('images/banner.jpg'); /* Replace with your banner image */
+            background-size: cover;
+            background-position: center;
+            padding: 80px 20px;
+            color: white;
+        }
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        .hero p {
+            font-size: 1.2rem;
+            margin: 0 auto;
+            max-width: 600px;
+        }
+        .section {
+            padding: 40px 20px;
+        }
+        .section h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+        .section p {
+            font-size: 1.1rem;
+            margin: 0 auto 20px;
+            max-width: 700px;
+        }
+        .carousel {
+            margin: 20px auto;
+            max-width: 80%;
+        }
+        .carousel img {
+            width: 100%;
+            border-radius: 10px;
+        }
+        footer {
+            background-color: #0e6d5e;
+            color: white;
+            padding: 10px 0;
+            margin-top: 20px;
+        }
+        footer a {
+            color: #22b5a4;
+            text-decoration: none;
+            font-weight: bold;
         }
     </style>
 </head>
@@ -26,11 +78,54 @@
             <a href="index.html">Showcase</a>
         </nav>
         <img src="images/Rosie’ Shinies.png" alt="Rosie's Shinies Logo" class="logo">
-        <h1>Welcome to Rosie's Shiny Pokémon</h1>
     </header>
 
+    <div class="hero">
+        <h1>Welcome to Rosie's Shiny Pokémon!</h1>
+        <p>Your one-stop destination to explore and showcase shiny Pokémon collections. Dive into the world of rare and sparkling Pokémon!</p>
+    </div>
+
     <main>
+        <!-- Introduction Section -->
+        <section class="section">
+            <h2>About Us</h2>
+            <p>At Rosie's Shiny Pokémon, we celebrate the joy of discovering shiny Pokémon. Whether you're a collector or just starting your journey, there's something for everyone!</p>
+        </section>
+
+        <!-- Featured Pokémon Carousel -->
+        <section class="section">
+            <h2>Featured Pokémon</h2>
+            <div class="carousel">
+                <div><img src="images/pokemon1.png" alt="Shiny Pokémon 1"></div>
+                <div><img src="images/pokemon2.png" alt="Shiny Pokémon 2"></div>
+                <div><img src="images/pokemon3.png" alt="Shiny Pokémon 3"></div>
+                <!-- Add more Pokémon images here -->
+            </div>
+        </section>
+
+        <!-- Navigation Button -->
         <a href="index.html" class="button">Go to Showcase</a>
     </main>
+
+    <footer>
+        <p>© 2025 Rosie's Shiny Pokémon. All rights reserved.</p>
+        <p>Visit our <a href="index.html">Showcase</a> or follow us for more updates!</p>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                arrows: false,
+                infinite: true,
+                speed: 300,
+                slidesToShow: 1,
+                autoplay: true,
+                autoplaySpeed: 3000
+            });
+        });
+    </script>
 </body>
 </html>
