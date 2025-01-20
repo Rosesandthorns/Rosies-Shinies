@@ -8,16 +8,48 @@
 </head>
 <body>
     <header>
-    <h1 style="text-align: center; margin-top: 20px;">Rosie's Shiny Pokémon</h1>
-    <input type="text" id="search" placeholder="Search Pokémon">
-    <div id="pokemon-count">Displaying 0 Pokémon</div> <!-- New div for Pokémon count -->
-    <div id="total-pokemon-count">Total Unique Pokémon: 0</div> <!-- New div for total unique Pokémon count -->
+        <nav>
+            <ul>
+                <li style="float:left; padding-right: 10px;">
+                    <img src="images/Rosie’s Shinies.png" alt="Rosie's Shinies" style="height: 50px;">
+                </li>
+                <li><a href="#home" onclick="showHome()">Home</a></li>
+                <li><a href="#pokemon" onclick="showPokemon()">Shiny Pokémon</a></li>
+            </ul>
+        </nav>
+        <h1 style="text-align: center; margin-top: 20px;">Rosie's Shiny Pokémon</h1>
     </header>
 
     <main>
-        <div id="pokemon-container"></div>
+        <div id="home-content" style="display: none; text-align: center;">
+            <img src="images/Rosie’s Shinies.png" alt="Rosie's Shinies" style="height: 200px; margin-top: 20px;">
+            <h2>Welcome to Rosie's Shiny Pokémon Collection</h2>
+            <p>Discover the unique and shiny Pokémon curated by Rosie.</p>
+        </div>
+        <div id="pokemon-content">
+            <input type="text" id="search" placeholder="Search Pokémon">
+            <div id="pokemon-count">Displaying 0 Pokémon</div>
+            <div id="total-pokemon-count">Total Unique Pokémon: 0</div>
+            <div id="pokemon-container"></div>
+        </div>
     </main>
 
+    <script>
+        function showHome() {
+            document.getElementById('home-content').style.display = 'block';
+            document.getElementById('pokemon-content').style.display = 'none';
+        }
+
+        function showPokemon() {
+            document.getElementById('home-content').style.display = 'none';
+            document.getElementById('pokemon-content').style.display = 'block';
+        }
+
+        // Initial load
+        window.onload = () => {
+            showHome();
+        };
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
