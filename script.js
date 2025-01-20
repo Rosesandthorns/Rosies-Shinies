@@ -3197,18 +3197,17 @@ function displayPokemon(startIndex, count = 16) {
 }
 
 // Function to filter Pokémon based on search input
-// Function to filter Pokémon based on search input
 function filterPokemon() {
     const searchQuery = searchInput.value.trim().toLowerCase();
 
     // Filter the Pokémon list based on the search query
-    const filteredPokemon = originalPokemonList.filter(pokemon =>
+    const filteredPokemon = pokemonList.filter(pokemon =>
         pokemon.nickname.toLowerCase().includes(searchQuery) ||
         pokemon.species.toLowerCase().includes(searchQuery) ||
         (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
     );
 
-    // Clear the container
+    // Clear the container and reset the displayed count
     pokemonContainer.innerHTML = "";
     displayedPokemon = 0;
 
@@ -3254,12 +3253,14 @@ function checkScroll() {
     }, 100);
 }
 
-// Initial load
 window.onload = () => {
-    displayPokemon(0, 16);
-    displayedPokemon += 16;
-    window.addEventListener("scroll", checkScroll);
-    searchInput.addEventListener("input", filterPokemon);
-    updatePokemonCount(pokemonList.length);
-    updateTotalPokemonCount(); // Call the function to update the total Pokémon count
+    if (window.location.pathname.includes("index.html")) {
+        displayPokemon(0, 16);  // Load first 16 Pokémon on the showcase page
+        displayedPokemon += 16;
+
+        window.addEventListener("scroll", checkScroll);
+        searchInput.addEventListener("input", filterPokemon);
+        updatePokemonCount(pokemonList.length);
+        updateTotalPokemonCount(); // Update the total Pokémon count
+    }
 };
