@@ -33,11 +33,6 @@
             font-size: 2.5rem;
             margin-bottom: 10px;
         }
-        .hero p {
-            font-size: 1.2rem;
-            margin: 0 auto;
-            max-width: 600px;
-        }
         .section {
             padding: 40px 20px;
         }
@@ -82,24 +77,20 @@
 
     <div class="hero">
         <h1>Welcome to Rosie's Shiny Pokémon!</h1>
-        <p>Your one-stop destination to explore and showcase shiny Pokémon collections. Dive into the world of rare and sparkling Pokémon!</p>
     </div>
 
     <main>
         <!-- Introduction Section -->
         <section class="section">
-            <h2>About Us</h2>
-            <p>At Rosie's Shiny Pokémon, we celebrate the joy of discovering shiny Pokémon. Whether you're a collector or just starting your journey, there's something for everyone!</p>
+            <h2>About Me</h2>
+            <p>Hi, my name is Rosie! I've spent hundreds of hours shiny hunting off-colored pixels, and I made this website to showcase them.</p>
         </section>
 
         <!-- Featured Pokémon Carousel -->
         <section class="section">
             <h2>Featured Pokémon</h2>
-            <div class="carousel">
-                <div><img src="images/pokemon1.png" alt="Shiny Pokémon 1"></div>
-                <div><img src="images/pokemon2.png" alt="Shiny Pokémon 2"></div>
-                <div><img src="images/pokemon3.png" alt="Shiny Pokémon 3"></div>
-                <!-- Add more Pokémon images here -->
+            <div class="carousel" id="featured-pokemon-carousel">
+                <!-- Pokémon cards will be dynamically inserted here -->
             </div>
         </section>
 
@@ -114,9 +105,29 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="script.js"></script>
     <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
+        $(document).ready(function() {
+            // Load random Pokémon cards into the carousel
+            const featuredPokemon = getRandomPokemonCards(5); // Get 5 random Pokémon cards
+            const carousel = $('#featured-pokemon-carousel');
+
+            featuredPokemon.forEach(pokemon => {
+                const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`).join(' ');
+
+                const cardHtml = `
+                    <div class="pokemon-card">
+                        <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+                        <h3>${pokemon.nickname}</h3>
+                        <p>${pokemon.species}</p>
+                        <p>${pokemon.description}</p>
+                        <div class="tags">${tagsHtml}</div>
+                    </div>
+                `;
+                carousel.append(cardHtml);
+            });
+
+            carousel.slick({
                 dots: true,
                 arrows: false,
                 infinite: true,
@@ -126,6 +137,11 @@
                 autoplaySpeed: 3000
             });
         });
+
+        function getRandomPokemonCards(count) {
+            const shuffled = pokemonList.sort(() => 0.5 - Math.random());
+            return shuffled.slice(0, count); // Return the first 'count' random Pokémon
+        }
     </script>
 </body>
 </html>
