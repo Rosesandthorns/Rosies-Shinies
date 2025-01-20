@@ -3143,6 +3143,8 @@ const pokemonList = [
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Grass", "Fighting", "Legendary", "SwSh"]
     }
+];
+
 const originalPokemonList = [...pokemonList]; // Store original list
 
 // Update the displayed count
