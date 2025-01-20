@@ -3270,6 +3270,41 @@ function checkScroll() {
         }
     }, 100);
 }
+function getRandomPokemon(array, count) {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count); // Select `count` random Pokémon
+}
+
+function displayRandomPokemon() {
+    const container = document.getElementById("random-pokemon-container");
+    const randomPokemon = getRandomPokemon(pokemonData, 9); // Change 9 to the number of cards to show
+
+    container.innerHTML = ""; // Clear container before adding new cards
+
+    randomPokemon.forEach((pokemon) => {
+        const card = document.createElement("div");
+        card.classList.add("pokemon-card");
+
+        card.innerHTML = `
+            <img src="${pokemon.imageUrl}" alt="${pokemon.name}">
+            <h3>${pokemon.name}</h3>
+            <p>Type: ${pokemon.type.join(", ")}</p>
+            <div class="tags">
+                ${pokemon.tags
+                    .map((tag) => `<span class="tag ${tag}">${tag}</span>`)
+                    .join("")}
+            </div>
+        `;
+
+        container.appendChild(card);
+    });
+}
+
+// Call the function to display random Pokémon on page load
+window.onload = () => {
+    displayRandomPokemon();
+};
+
 
 // Initial load
 window.onload = () => {
