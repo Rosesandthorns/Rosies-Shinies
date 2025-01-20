@@ -105,14 +105,14 @@
         <!-- Introduction Section -->
         <section class="section">
             <h2>About Me</h2>
-            <p>Hi, my name is Rosie, I've spent hundreds of hours shiny hunting off coloured pixels and I made this website to showcase them</p>
+            <p>Hi, my name is Rosie, I've spent hundreds of hours shiny hunting off-coloured pixels, and I made this website to showcase them!</p>
         </section>
 
         <!-- Daily Featured Pokémon Section -->
         <section class="section">
             <h2>Daily Featured Pokémon</h2>
             <div id="daily-featured" class="carousel">
-                <!-- Randomly selected Pokémon will be displayed here as cards -->
+                <!-- Daily featured Pokémon will be dynamically displayed here -->
             </div>
             <div id="daily-timer" class="timer">Next feature in: <span id="timer"></span></div>
         </section>
@@ -121,7 +121,7 @@
         <section class="section">
             <h2>Randomly Featured Pokémon</h2>
             <div class="carousel" id="random-featured">
-                <!-- Random Pokémon cards will be displayed here -->
+                <!-- Random Pokémon cards will be dynamically displayed here -->
             </div>
         </section>
 
@@ -133,22 +133,16 @@
         <p>© 2025 Rosie's Shiny Pokémon. All rights reserved.</p>
     </footer>
 
+    <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Pokémon data (replace this with the data from script.js)
-            const pokemonList = [
-                { nickname: "Shiny Charmander", imageUrl: "images/charmander.png", type: "Fire" },
-                { nickname: "Shiny Bulbasaur", imageUrl: "images/bulbasaur.png", type: "Grass" },
-                { nickname: "Shiny Squirtle", imageUrl: "images/squirtle.png", type: "Water" }
-                // Add more Pokémon here
-            ];
-
-            function getRandomPokemon() {
-                return pokemonList[Math.floor(Math.random() * pokemonList.length)];
+        document.addEventListener('DOMContentLoaded', function () {
+            function getRandomPokemon(array, count = 1) {
+                const shuffled = array.sort(() => 0.5 - Math.random());
+                return shuffled.slice(0, count);
             }
 
-            function displayDailyFeaturedPokemon() {
-                const dailyPokemon = getRandomPokemon();
+            function displayDailyFeaturedPokemon(data) {
+                const dailyPokemon = getRandomPokemon(data)[0]; // Select one Pokémon for daily feature
                 document.getElementById('daily-featured').innerHTML = `
                     <div class="card">
                         <img src="${dailyPokemon.imageUrl}" alt="${dailyPokemon.nickname}">
@@ -158,48 +152,27 @@
                 `;
             }
 
-            // Check if the next feature time is already set in localStorage
-            let nextFeatureTime = localStorage.getItem('nextFeatureTime');
-            if (!nextFeatureTime) {
-                // Set the next feature time to 24 hours from now if not already set
-                nextFeatureTime = Date.now() + 24 * 60 * 60 * 1000;
-                localStorage.setItem('nextFeatureTime', nextFeatureTime);
+            function displayRandomFeaturedPokemon(data) {
+                const randomPokemon = getRandomPokemon(data, 3); // Select three Pokémon for random feature
+                const container = document.getElementById('random-featured');
+                container.innerHTML = randomPokemon
+                    .map(pokemon => `
+                        <div class="card">
+                            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+                            <h3>${pokemon.nickname}</h3>
+                            <p>Type: ${pokemon.type}</p>
+                        </div>
+                    `)
+                    .join('');
             }
 
-            // Display the daily featured Pokémon and set the timer
-            displayDailyFeaturedPokemon();
+            // Fetch Pokémon data from script.js
+            const pokemonData = window.pokemonData;
 
-            const timerElement = document.getElementById('timer');
-            const countdownInterval = setInterval(() => {
-                const now = new Date();
-                const diff = nextFeatureTime - now;
-
-                if (diff <= 0) {
-                    clearInterval(countdownInterval);
-                    timerElement.textContent = 'Time for a new Pokémon!';
-                    // Reset the next feature time after 24 hours
-                    localStorage.setItem('nextFeatureTime', Date.now() + 24 * 60 * 60 * 1000);
-                } else {
-                    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-                    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-                    timerElement.textContent = `${hours}h ${minutes}m ${seconds}s`;
-                }
-            }, 1000);
-
-            function displayRandomFeaturedPokemon() {
-                const randomPokemon = getRandomPokemon();
-                document.getElementById('random-featured').innerHTML = `
-                    <div class="card">
-                        <img src="${randomPokemon.imageUrl}" alt="${randomPokemon.nickname}">
-                        <h3>${randomPokemon.nickname}</h3>
-                        <p>Type: ${randomPokemon.type}</p>
-                    </div>
-                `;
+            if (pokemonData) {
+                displayDailyFeaturedPokemon(pokemonData);
+                displayRandomFeaturedPokemon(pokemonData);
             }
-
-            // Display the random featured Pokémon on page load
-            displayRandomFeaturedPokemon();
         });
     </script>
 </body>
