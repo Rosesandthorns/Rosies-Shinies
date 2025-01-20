@@ -3273,11 +3273,25 @@ function checkScroll() {
 
 // Initial load
 window.onload = () => {
-    displayPokemon(0, 16);  // Load first 16 Pokémon on the showcase page
-    displayedPokemon += 16;
+    // Ensure the DOM is fully loaded before proceeding
+    document.addEventListener('DOMContentLoaded', function () {
+        // Initialize search input listener after DOM is ready
+        const searchInput = document.getElementById('search');
+        
+        // Check if the searchInput exists to avoid potential null errors
+        if (searchInput) {
+            searchInput.addEventListener("input", filterPokemon);
+        }
 
-    window.addEventListener("scroll", checkScroll);
-    searchInput.addEventListener("input", filterPokemon);
-    updatePokemonCount(pokemonList.length);
-    updateTotalPokemonCount(); // Update the total Pokémon count
+        // Load the first 16 Pokémon on the showcase page
+        displayPokemon(0, 16);
+        displayedPokemon += 16;
+
+        // Attach the scroll event listener
+        window.addEventListener("scroll", checkScroll);
+
+        // Update Pokémon counts
+        updatePokemonCount(pokemonList.length);
+        updateTotalPokemonCount();  // Update the total Pokémon count
+    });
 };
