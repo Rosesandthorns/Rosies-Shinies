@@ -30,6 +30,34 @@ input[type="text"] {
     margin-right: auto;
     display: block;
 }
+.navbar {
+    display: flex;
+    justify-content: center;
+    background-color: #0e6d5e;
+    padding: 10px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    margin: 0 10px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar a.active {
+    background-color: #22b5a4;
+}
+
+.navbar a:hover {
+    background-color: #197b68;
+}
 
 /* Container for the Pokémon cards */
 #pokemon-container {
