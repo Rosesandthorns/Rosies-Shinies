@@ -42,7 +42,6 @@ input[type="text"] {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 8px;
-    width: calc(25% - 20px); /* Ensure four cards per row with margin */
     margin: 10px;
     text-align: center;
     padding: 15px;
