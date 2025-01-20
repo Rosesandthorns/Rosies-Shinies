@@ -2967,7 +2967,7 @@ const pokemonList = [
     species: "#0046 - Paras",
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
-    tags: [Grass"", "Bug", "PLA"]
+    tags: ["Grass", "Bug", "PLA"]
     },
     {
     nickname: "Charlie",
