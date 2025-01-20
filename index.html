@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rosie's Shiny Pokémon</title>
+    <title>Shiny Pokémon Showcase</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
-    <h1 style="text-align: center; margin-top: 20px;">Rosie's Shiny Pokémon</h1>
-    <input type="text" id="search" placeholder="Search Pokémon">
-    <div id="pokemon-count">Displaying 0 Pokémon</div> <!-- New div for Pokémon count -->
-    <div id="total-pokemon-count">Total Unique Pokémon: 0</div> <!-- New div for total unique Pokémon count -->
+        <nav class="navbar">
+            <a href="home.html">Home</a>
+            <a href="index.html" class="active">Showcase</a>
+        </nav>
+        <h1>Shiny Pokémon Showcase</h1>
     </header>
 
     <main>
+        <input type="text" id="search" placeholder="Search Pokémon" oninput="filterPokemon()">
         <div id="pokemon-container"></div>
     </main>
+
+    <footer>
+        <p>&copy; 2025 Rosie's Shiny Pokémon</p>
+    </footer>
 
     <script src="script.js"></script>
 </body>
