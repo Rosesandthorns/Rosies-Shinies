@@ -3253,6 +3253,42 @@ function checkScroll() {
         }
     }, 100);
 }
+$(document).ready(function(){
+    // Initialize the carousel
+    $('#random-carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpeed: 3000,
+        arrows: false
+    });
+
+    // Function to get a random card
+    function getRandomCard() {
+        const randomIndex = Math.floor(Math.random() * pokemonList.length);
+        return pokemonList[randomIndex];
+    }
+
+    // Function to create a card HTML
+    function createCardHtml(pokemon) {
+        return `
+            <div class="pokemon-card">
+                <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+                <h3>${pokemon.nickname}</h3>
+                <p>${pokemon.species}</p>
+                <p>${pokemon.description}</p>
+            </div>
+        `;
+    }
+
+    // Populate the carousel with random cards
+    for (let i = 0; i < 10; i++) {
+        const randomPokemon = getRandomCard();
+        const cardHtml = createCardHtml(randomPokemon);
+        $('#random-carousel').slick('slickAdd', cardHtml);
+    }
+});
 
 // Initial load
 window.onload = () => {
