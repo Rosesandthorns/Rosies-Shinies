@@ -131,45 +131,40 @@
 
     <script src="script.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            function getRandomPokemon(array, count = 1) {
-                const shuffled = array.sort(() => 0.5 - Math.random());
-                return shuffled.slice(0, count);
-            }
+    document.addEventListener('DOMContentLoaded', function () {
+        function displayDailyFeaturedPokemon(data) {
+            const dailyPokemon = getDailyPokemon(data);
+            document.getElementById('daily-featured').innerHTML = `
+                <div class="card">
+                    <img src="${dailyPokemon.imageUrl}" alt="${dailyPokemon.nickname}">
+                    <h3>${dailyPokemon.nickname}</h3>
+                    <p>Type: ${dailyPokemon.type}</p>
+                </div>
+            `;
+        }
 
-            function displayDailyFeaturedPokemon(data) {
-                const dailyPokemon = getRandomPokemon(data)[0]; // Select one Pokémon for daily feature
-                document.getElementById('daily-featured').innerHTML = `
+        function displayRandomFeaturedPokemon(data) {
+            const randomPokemon = getRandomPokemon(data, 3); // Select three Pokémon for random feature
+            const container = document.getElementById('random-featured');
+            container.innerHTML = randomPokemon
+                .map(pokemon => `
                     <div class="card">
-                        <img src="${dailyPokemon.imageUrl}" alt="${dailyPokemon.nickname}">
-                        <h3>${dailyPokemon.nickname}</h3>
-                        <p>Type: ${dailyPokemon.type}</p>
+                        <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+                        <h3>${pokemon.nickname}</h3>
+                        <p>Type: ${pokemon.type}</p>
                     </div>
-                `;
-            }
+                `)
+                .join('');
+        }
 
-            function displayRandomFeaturedPokemon(data) {
-                const randomPokemon = getRandomPokemon(data, 3); // Select three Pokémon for random feature
-                const container = document.getElementById('random-featured');
-                container.innerHTML = randomPokemon
-                    .map(pokemon => `
-                        <div class="card">
-                            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-                            <h3>${pokemon.nickname}</h3>
-                            <p>Type: ${pokemon.type}</p>
-                        </div>
-                    `)
-                    .join('');
-            }
+        // Fetch Pokémon data from script.js
+        const pokemonData = window.pokemonData;
 
-            // Fetch Pokémon data from script.js
-            const pokemonData = window.pokemonData;
-
-            if (pokemonData) {
-                displayDailyFeaturedPokemon(pokemonData);
-                displayRandomFeaturedPokemon(pokemonData);
-            }
-        });
+        if (pokemonData) {
+            displayDailyFeaturedPokemon(pokemonData);
+            displayRandomFeaturedPokemon(pokemonData);
+        }
+    });
     </script>
 </body>
 </html>
