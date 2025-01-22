@@ -3300,6 +3300,29 @@ function displayRandomPokemon() {
     });
 }
 
+const DAILY_POKEMON_KEY = 'dailyPokemon';
+const DAILY_POKEMON_TIMESTAMP_KEY = 'dailyPokemonTimestamp';
+const ONE_DAY_MS = 24 * 60 * 60 * 1000;
+
+function getRandomPokemon(array) {
+    const shuffled = array.sort(() => 0.5 - Math.random());
+    return shuffled[0];
+}
+
+function getDailyPokemon(array) {
+    const now = Date.now();
+    let dailyPokemon = JSON.parse(localStorage.getItem(DAILY_POKEMON_KEY));
+    const timestamp = localStorage.getItem(DAILY_POKEMON_TIMESTAMP_KEY);
+
+    if (!dailyPokemon || !timestamp || now - timestamp > ONE_DAY_MS) {
+        dailyPokemon = getRandomPokemon(array);
+        localStorage.setItem(DAILY_POKEMON_KEY, JSON.stringify(dailyPokemon));
+        localStorage.setItem(DAILY_POKEMON_TIMESTAMP_KEY, now);
+    }
+
+    return dailyPokemon;
+}
+
 // Call the function to display random Pokémon on page load
 window.onload = () => {
     displayRandomPokemon();
