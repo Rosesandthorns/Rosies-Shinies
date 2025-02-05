@@ -3142,6 +3142,167 @@ const pokemonList = [
     description: "Placeholder",
     imageUrl: "https://via.placeholder.com/200",
     tags: ["Grass", "Fighting", "Legendary", "SwSh"]
+    },
+    {
+    nickname: "Nightsky",
+    species: "#0037 - Alolan Vulpix",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ice", "SV"]
+    },
+    {
+    nickname: "Gary",
+    species: "#0130 - Gyrados",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Water", "Flying", "SV"]
+    },
+    {
+    nickname: "Exeggcute",
+    species: "#0102 - Exeggcute",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "Pshychic", "SV"]
+    },
+    {
+    nickname: "Stantler",
+    species: "#0234 - Stantler",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Normal", "SV"]
+    },
+    {
+    nickname: "Spooksie",
+    species: "#0353 - Shuppet",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "SV"]
+    },
+    {
+    nickname: "Baguette",
+    species: "#0354 - Banette",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "SV"]
+    },
+    {
+    nickname: "Tini",
+    species: "#0226 - Mantine",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Water", "Flying", "SwSh"]
+    },
+    {
+    nickname: "Lin",
+    species: "#0264 - Linoone",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Normal", "SwSh"]
+    },
+    {
+    nickname: "Bello",
+    species: "#0182 - Bellosom",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "SV"]
+    },
+    {
+    nickname: "En Garde",
+    species: "#0282 - Gardevoir",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Psychic", "Fairy", "SV"]
+    },
+    {
+    nickname: "Ribo",
+    species: "#0743 - Ribombee",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Bug", "Fairy", "SV"]
+    },
+    {
+    nickname: "Impi",
+    species: "#0859 - Impidimp",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Fairy", "SV"]
+    },
+    {
+    nickname: "Morga",
+    species: "#0860 - Morgem",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Fairy", "SV"]
+    },
+    {
+    nickname: "Artist",
+    species: "#0945 - Grafarai",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Poison", "Normal", "SV"]
+    },
+    {
+    nickname: "Greaves",
+    species: "#0971 - Greavyard",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ghost", "SV"]
+    },
+    {
+    nickname: "Glacies",
+    species: "#0215 - Sneasel",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Ice", "SV"]
+    },
+    {
+    nickname: "Sprout",
+    species: "#0906 - Sprigatito",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Grass", "Starter", "SV"]
+    },
+    {
+    nickname: "Spoin",
+    species: "#0325 - Psychic",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Psychic", "SV"]
+    },
+    {
+    nickname: "Vibra",
+    species: "#0329 - Vibrava",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Ground", "Dragon", "SV"]
+    },
+    {
+    nickname: "Xure",
+    species: "#0611 - Fraxure",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dragon", "SV"]
+    },
+    {
+    nickname: "Noisa",
+    species: "#0714 - Noibat",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Flying", "Dragon", "SV"]
+    },
+    {
+    nickname: "Cyclaz",
+    species: "#0967 - Cyclizar",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dragon", "Normal", "SV"]
+    },
+    {
+    nickname: "Starride",
+    species: "#0263 - Galarian Zigzagoon",
+    description: "Placeholder",
+    imageUrl: "https://via.placeholder.com/200",
+    tags: ["Dark", "Normal", "Swsh"]
     }
 ];
 
