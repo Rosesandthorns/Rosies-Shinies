@@ -143,18 +143,38 @@
             `;
         }
 
-        function displayRandomFeaturedPokemon(data) {
-            const randomPokemon = getRandomPokemon(data, 3); // Select three Pokémon for random feature
-            const container = document.getElementById('random-featured');
-            container.innerHTML = randomPokemon
-                .map(pokemon => `
-                    <div class="card">
-                        <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-                        <h3>${pokemon.nickname}</h3>
-                        <p>Type: ${pokemon.type}</p>
-                    </div>
-                `)
-                .join('');
+        <section class="section">
+    <h2>Randomly Featured Pokémon</h2>
+    <div class="carousel" id="random-featured">
+        <!-- Random Pokémon cards will be dynamically displayed here -->
+    </div>
+</section>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+    function displayRandomFeaturedPokemon(data) {
+        const randomPokemon = getRandomPokemon(data, 5); // Select five Pokémon for random feature
+        const container = document.getElementById('random-featured');
+        container.innerHTML = randomPokemon
+            .map(pokemon => `
+                <div class="card">
+                    <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+                    <h3>${pokemon.nickname}</h3>
+                    <p>Type: ${pokemon.type}</p>
+                </div>
+            `)
+            .join('');
+    }
+
+    // Fetch Pokémon data from script.js
+    const pokemonData = window.pokemonData;
+    if (pokemonData) {
+        displayRandomFeaturedPokemon(pokemonData);
+    }
+});
+</script>
+
+
         }
 
         // Fetch Pokémon data from script.js
