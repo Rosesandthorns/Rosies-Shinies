@@ -381,23 +381,3 @@ input[type="text"] {
     font-size: 1.2rem;
     color: #333;
 }
-@keyframes leafParticles {
-    0% {
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(100vh) rotate(360deg);
-        opacity: 0;
-    }
-}
-
-.particle {
-    position: absolute;
-    width: 20px;
-    height: 20px;
-    background-size: contain;
-    background-repeat: no-repeat;
-    animation: leafParticles 7s linear infinite;
-    pointer-events: none; /* Prevent particles from interfering with clicks */
-}
