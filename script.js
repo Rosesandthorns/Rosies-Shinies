@@ -3516,13 +3516,28 @@ document.querySelectorAll('.filter-tag').forEach(tag => {
     tag.addEventListener('change', filterPokemon);
 });
 
-// Initial load
-window.onload = () => {
-    displayPokemon(0, 16);  // Load first 16 Pokémon on the showcase page
-    displayedPokemon += 16;
+// Example function to display Pokémon cards
+function displayPokemon(pokemonList) {
+    const pokemonContainer = document.getElementById('pokemon-container');
+    pokemonContainer.innerHTML = '';
 
-    window.addEventListener("scroll", checkScroll);
-    searchInput.addEventListener("input", filterPokemon);
-    updatePokemonCount(pokemonList.length);
-    updateTotalPokemonCount(); // Update the total Pokémon count
-};
+    pokemonList.forEach(pokemon => {
+        const card = document.createElement('div');
+        card.classList.add('pokemon-card');
+        const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`).join(' ');
+
+        card.innerHTML = `
+            <img src="${pokemon.imageUrl}" alt="${pokemon.name}">
+            <h3>${pokemon.name}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
+            <div class="tags">${tagsHtml}</div>
+        `;
+
+        pokemonContainer.appendChild(card);
+    });
+
+    // Update the displayed Pokémon count
+    document.getElementById('pokemon-count').textContent = `Displaying ${pokemonList.length} Pokémon`;
+    document.getElementById('total-pokemon-count').textContent = `Total Unique Pokémon: ${pokemonList.length}`;
+}
