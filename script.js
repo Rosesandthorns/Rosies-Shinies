@@ -3489,6 +3489,32 @@ window.onload = () => {
     displayRandomPokemon();
 };
 
+document.getElementById('filter-button').addEventListener('click', () => {
+    const filterContainer = document.getElementById('filter-container');
+    filterContainer.style.display = filterContainer.style.display === 'none' ? 'block' : 'none';
+});
+
+function applyFilters(pokemonList) {
+    const selectedTags = Array.from(document.querySelectorAll('.filter-tag:checked')).map(tag => tag.value);
+    if (selectedTags.length === 0) return pokemonList; // No filters applied
+
+    return pokemonList.filter(pokemon => {
+        return selectedTags.every(tag => pokemon.tags.includes(tag));
+    });
+}
+
+function filterPokemon() {
+    const searchInput = document.getElementById('search').value.toLowerCase();
+    let filteredList = pokemonList.filter(pokemon => pokemon.name.toLowerCase().includes(searchInput));
+
+    filteredList = applyFilters(filteredList);
+    displayPokemon(filteredList);
+}
+
+document.getElementById('search').addEventListener('input', filterPokemon);
+document.querySelectorAll('.filter-tag').forEach(tag => {
+    tag.addEventListener('change', filterPokemon);
+});
 
 // Initial load
 window.onload = () => {
