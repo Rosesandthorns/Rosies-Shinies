@@ -1,26 +1,5 @@
-let displayedPokemon = 0;
-
-const pokemonContainer = document.getElementById("pokemon-container");
-const searchInput = document.getElementById("search");
-
-function updatePokemonCount(count) {
-    const countElement = document.getElementById("pokemon-count");
-    if (countElement) {
-        countElement.textContent = `Displaying ${count}/${pokemonList.length} Pokémon`;
-    }
-}
-
-function updateTotalPokemonCount() {
-    const totalCountElement = document.getElementById("total-pokemon-count");
-    if (totalCountElement) {
-        const uniquePokemon = new Set(pokemonList.map(pokemon => 
-            pokemon.species.replace(/(Hisuian|Galarian|Paldean|Alolan)\s+/i, '')
-        )).size;
-        totalCountElement.textContent = `Total Unique Pokémon: ${uniquePokemon}/989`;
-    }
-}
-
-const originalPokemonList = [...pokemonList]; // Store original list
+// script.js
+console.log(pokemonList); // To ensure data is loaded
 
 function updatePokemonCount(count) {
     const countElement = document.getElementById("pokemon-count");
@@ -40,6 +19,7 @@ function updateTotalPokemonCount() {
 }
 
 function displayPokemon(startIndex, count = 16) {
+    const pokemonContainer = document.getElementById("pokemon-container");
     if (!pokemonContainer) {
         console.error("Pokemon container element not found!");
         return;
@@ -87,9 +67,8 @@ function displayPokemon(startIndex, count = 16) {
     updatePokemonCount(filteredPokemon.length);
 }
 
-// Improved debounce logic for infinite scroll
-let debounceTimer;
 function checkScroll() {
+    let debounceTimer;
     clearTimeout(debounceTimer);
     debounceTimer = setTimeout(() => {
         const scrollPosition = window.innerHeight + window.scrollY;
@@ -108,6 +87,5 @@ function checkScroll() {
     }, 100);
 }
 
-// Update the displayed Pokémon count
 document.getElementById('pokemon-count').textContent = `Displaying ${pokemonList.length} Pokémon`;
 document.getElementById('total-pokemon-count').textContent = `Total Unique Pokémon: ${pokemonList.length}`;
