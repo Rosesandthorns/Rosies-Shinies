@@ -3432,7 +3432,6 @@ function checkScroll() {
     }, 100);
 }
 
-    // Update the displayed Pokémon count
-    document.getElementById('pokemon-count').textContent = `Displaying ${pokemonList.length} Pokémon`;
-    document.getElementById('total-pokemon-count').textContent = `Total Unique Pokémon: ${pokemonList.length}`;
-}
+// Update the displayed Pokémon count
+document.getElementById('pokemon-count').textContent = `Displaying ${pokemonList.length} Pokémon`;
+document.getElementById('total-pokemon-count').textContent = `Total Unique Pokémon: ${pokemonList.length}`;
