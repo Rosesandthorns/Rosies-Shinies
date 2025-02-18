@@ -1,6 +1,8 @@
 // script.js
 console.log(pokemonList); // To ensure data is loaded
 
+const searchInput = document.getElementById('search'); // Define searchInput
+
 function updatePokemonCount(count) {
     const countElement = document.getElementById("pokemon-count");
     if (countElement) {
@@ -26,7 +28,7 @@ function displayPokemon(startIndex, count = 16) {
     }
 
     const searchQuery = searchInput.value.trim().toLowerCase();
-    let filteredPokemon = originalPokemonList;
+    let filteredPokemon = pokemonList;
 
     if (searchQuery) {
         filteredPokemon = originalPokemonList.filter(pokemon =>
