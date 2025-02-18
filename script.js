@@ -3438,7 +3438,7 @@ function getRandomPokemon(array, count) {
 
 function displayRandomPokemon() {
     const container = document.getElementById("random-pokemon-container");
-    const randomPokemon = getRandomPokemon(pokemonData, 9); // Change 9 to the number of cards to show
+    const randomPokemon = getRandomPokemon(pokemonList, 9); // Change 9 to the number of cards to show
 
     container.innerHTML = ""; // Clear container before adding new cards
 
@@ -3447,12 +3447,13 @@ function displayRandomPokemon() {
         card.classList.add("pokemon-card");
 
         card.innerHTML = `
-            <img src="${pokemon.imageUrl}" alt="${pokemon.name}">
-            <h3>${pokemon.name}</h3>
-            <p>Type: ${pokemon.type.join(", ")}</p>
+            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
+            <h3>${pokemon.nickname}</h3>
+            <p>${pokemon.species}</p>
+            <p>${pokemon.description}</p>
             <div class="tags">
                 ${pokemon.tags
-                    .map((tag) => `<span class="tag ${tag}">${tag}</span>`)
+                    .map((tag) => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`)
                     .join("")}
             </div>
         `;
