@@ -3308,7 +3308,6 @@ const pokemonList = [
 
 const originalPokemonList = [...pokemonList]; // Store original list
 
-// Update the displayed count
 function updatePokemonCount(count) {
     const countElement = document.getElementById("pokemon-count");
     if (countElement) {
@@ -3316,7 +3315,6 @@ function updatePokemonCount(count) {
     }
 }
 
-// Update the total unique Pokémon count
 function updateTotalPokemonCount() {
     const totalCountElement = document.getElementById("total-pokemon-count");
     if (totalCountElement) {
@@ -3327,7 +3325,6 @@ function updateTotalPokemonCount() {
     }
 }
 
-// Function to display Pokémon cards
 function displayPokemon(startIndex, count = 16) {
     if (!pokemonContainer) {
         console.error("Pokemon container element not found!");
@@ -3372,41 +3369,6 @@ function displayPokemon(startIndex, count = 16) {
 
         pokemonContainer.appendChild(card);
     }
-
-    updatePokemonCount(filteredPokemon.length);
-}
-
-// Function to filter Pokémon based on search input
-function filterPokemon() {
-    const searchQuery = searchInput.value.trim().toLowerCase();
-
-    const filteredPokemon = originalPokemonList.filter(pokemon =>
-        pokemon.nickname.toLowerCase().includes(searchQuery) ||
-        pokemon.species.toLowerCase().includes(searchQuery) ||
-        (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
-    );
-
-    // Clear the container and reset the displayed count
-    pokemonContainer.innerHTML = "";
-    displayedPokemon = 0;
-
-    // Display filtered Pokémon
-    filteredPokemon.forEach(pokemon => {
-        const card = document.createElement("div");
-        card.classList.add("pokemon-card");
-
-        const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`).join(' ');
-
-        card.innerHTML = `
-            <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
-            <h3>${pokemon.nickname}</h3>
-            <p>${pokemon.species}</p>
-            <p>${pokemon.description}</p>
-            <div class="tags">${tagsHtml}</div>
-        `;
-
-        pokemonContainer.appendChild(card);
-    });
 
     updatePokemonCount(filteredPokemon.length);
 }
