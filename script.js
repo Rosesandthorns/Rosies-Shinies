@@ -26,7 +26,7 @@ function displayPokemon(startIndex, count = 16) {
     }
 
     const searchQuery = searchInput.value.trim().toLowerCase();
-    let filteredPokemon = pokemonList;
+    let filteredPokemon = originalPokemonList;
 
     if (searchQuery) {
         filteredPokemon = originalPokemonList.filter(pokemon =>
@@ -35,6 +35,8 @@ function displayPokemon(startIndex, count = 16) {
             (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
         );
     }
+
+    pokemonContainer.innerHTML = ''; // Clear the container before displaying new cards
 
     const remaining = filteredPokemon.length - startIndex;
     const loadCount = Math.min(count, remaining);
