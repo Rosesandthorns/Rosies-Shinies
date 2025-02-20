@@ -31,7 +31,7 @@ function displayPokemon(startIndex, count = 16) {
     let filteredPokemon = pokemonList;
 
     if (searchQuery) {
-        filteredPokemon = originalPokemonList.filter(pokemon =>
+        filteredPokemon = pokemonList.filter(pokemon =>
             pokemon.nickname.toLowerCase().includes(searchQuery) ||
             pokemon.species.toLowerCase().includes(searchQuery) ||
             (pokemon.tags && pokemon.tags.some(tag => tag.toLowerCase().includes(searchQuery)))
@@ -55,7 +55,7 @@ function displayPokemon(startIndex, count = 16) {
         const card = document.createElement("div");
         card.classList.add("pokemon-card");
 
-        const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}">${tag}</span>`).join(' ');
+        const tagsHtml = pokemon.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/ /g, '-')}\">${tag}</span>`).join(' ');
 
         card.innerHTML = `
             <img src="${pokemon.imageUrl}" alt="${pokemon.nickname}">
