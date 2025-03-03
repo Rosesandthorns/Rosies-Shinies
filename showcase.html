@@ -20,6 +20,11 @@
 
   <div class="container">
     <h1>Showcase</h1>
+    <div id="counters">
+      <p>Total shiny Pokémon: <span id="totalShinyPokemon"></span></p>
+      <p>Unique shiny Pokémon: <span id="totalUniquePokemon"></span>/987</p>
+      <p>Total unique percentage: <span id="totalUniquePercentage"></span>%</p>
+    </div>
     <div class="top-controls">
       <input type="text" id="searchInput" placeholder="Search by Nickname or Species...">
       <button id="toggleModeBtn">Toggle Light/Dark Mode</button>
@@ -59,6 +64,23 @@
       const toggleModeBtn = document.getElementById('toggleModeBtn');
       const toggleFilterBtn = document.getElementById('toggleFilterBtn');
       const filterContainer = document.getElementById('filterContainer');
+
+      // Calculate total shiny Pokémon
+      const totalShinyPokemon = pokemonList.length;
+
+      // Calculate unique shiny Pokémon excluding regional forms
+      const regionalForms = ["Alolan", "Galarian", "Hisuian", "Paldean"];
+      const uniqueSpecies = new Set(
+        pokemonList
+          .map(pkm => pkm.species.split(" - ")[1]) // Extract species name
+          .filter(species => !regionalForms.some(region => species.includes(region))) // Exclude regional forms
+      );
+      const totalUniquePokemon = uniqueSpecies.size;
+
+      // Adding counters to the HTML
+      document.getElementById('totalShinyPokemon').textContent = totalShinyPokemon;
+      document.getElementById('totalUniquePokemon').textContent = totalUniquePokemon;
+      document.getElementById('totalUniquePercentage').textContent = (totalUniquePokemon / 987 * 100).toFixed(2);
 
       function getAllTags(list) {
         const tagSet = new Set();
