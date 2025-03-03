@@ -11,7 +11,7 @@ const pokemonList = [
         nickname: "Chedder",
         species: "#0805 - Stakataka",
         description: "This Yellow Wall Was Caught In The SWSH DlC, after 55 encounters",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/d/d0/Stakataka.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/805.png", //From same wiki
         tags: ["Favourite", "Ultra Beast", "Rock", "Steel", "SwSh"]
     },
     {
