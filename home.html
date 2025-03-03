@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Rosie's Shiny Pokémon</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="dark-mode">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="home.html" class="nav-brand">Rosie's Shiny Pokémon</a>
+      <ul class="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="showcase.html">Showcase</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="top-controls">
+    <button id="toggleModeBtn">Toggle Light/Dark Mode</button>
+  </div>
+
+  <div class="container">
+    <h1>Rosie's Shiny Pokémon</h1>
+
+    <section id="about-me">
+      <h2>About Me</h2>
+      <p>
+        My name is Rosie, I have spent well over 1000 hours shiny hunting Pokémon
+        to build a living shiny national dex, and this is all the Pokémon I've collected so far.
+      </p>
+    </section>
+
+    <section id="featured">
+      <div id="daily-featured">
+        <h2>Daily Featured Pokémon</h2>
+        <div id="dailyCard"></div>
+        <div id="dailyTimer"></div>
+      </div>
+
+      <div id="random-featured">
+        <h2>Random Featured Pokémon</h2>
+        <div id="randomCard"></div>
+      </div>
+    </section>
+  </div>
+
+  <script src="data.js"></script>
+  <script>
+    // Utility: Create a card element from a Pokémon object
+    function createCard(pkm) {
+      const card = document.createElement('div');
+      card.classList.add('card');
+
+      // Header
+      const header = document.createElement('div');
+      header.classList.add('card-header');
+      const nickname = document.createElement('h2');
+      nickname.classList.add('nickname');
+      nickname.textContent = pkm.nickname;
+      header.appendChild(nickname);
+
+      // Image
+      const img = document.createElement('img');
+      img.src = pkm.imageUrl;
+      img.alt = pkm.nickname;
+
+      // Body
+      const body = document.createElement('div');
+      body.classList.add('card-body');
+      const speciesEl = document.createElement('p');
+      speciesEl.classList.add('species');
+      speciesEl.textContent = pkm.species;
+      const descEl = document.createElement('p');
+      descEl.classList.add('description');
+      descEl.textContent = pkm.description;
+      body.appendChild(speciesEl);
+      body.appendChild(descEl);
+
+      // Tag container
+      const tagContainer = document.createElement('div');
+      tagContainer.classList.add('tag-container');
+      pkm.tags.forEach(tag => {
+        const span = document.createElement('span');
+        span.classList.add('tag', tag.toLowerCase().replace(/\s+/g, '-'));
+        span.textContent = tag;
+        tagContainer.appendChild(span);
+      });
+
+      card.appendChild(header);
+      card.appendChild(img);
+      card.appendChild(body);
+      card.appendChild(tagContainer);
+
+      return card;
+    }
+
+    // Calculate the daily featured index based on current EST date.
+    function getDailyIndex() {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const estOffset = -5;
+      const estTime = new Date(utc + 3600000 * estOffset);
+      const y = estTime.getFullYear();
+      const m = estTime.getMonth() + 1;
+      const d = estTime.getDate();
+      const dateNum = parseInt(
+        `${y}${m < 10 ? '0' + m : m}${d < 10 ? '0' + d : d}`,
+        10
+      );
+      return dateNum % pokemonList.length;
+    }
+
+    // Update the countdown timer until next midnight EST.
+    function updateDailyTimer() {
+      const now = new Date();
+      const utc = now.getTime() + now.getTimezoneOffset() * 60000;
+      const estOffset = -5;
+      const estNow = new Date(utc + 3600000 * estOffset);
+      // Next midnight EST:
+      const nextMidnightEST = new Date(
+        estNow.getFullYear(),
+        estNow.getMonth(),
+        estNow.getDate() + 1
+      );
+      const diff = nextMidnightEST - estNow;
+      const hours = Math.floor(diff / 3600000);
+      const minutes = Math.floor((diff % 3600000) / 60000);
+      const seconds = Math.floor((diff % 60000) / 1000);
+      document.getElementById('dailyTimer').textContent =
+        `Next update in ${hours}h ${minutes}m ${seconds}s`;
+    }
+
+    // Set the daily featured card.
+    function setDailyFeatured() {
+      const index = getDailyIndex();
+      const pkm = pokemonList[index];
+      const dailyCard = createCard(pkm);
+      const container = document.getElementById('dailyCard');
+      container.innerHTML = '';
+      container.appendChild(dailyCard);
+    }
+
+    // Set a random featured card.
+    function setRandomFeatured() {
+      const randomIndex = Math.floor(Math.random() * pokemonList.length);
+      const pkm = pokemonList[randomIndex];
+      const randomCard = createCard(pkm);
+      const container = document.getElementById('randomCard');
+      container.innerHTML = '';
+      container.appendChild(randomCard);
+    }
+
+    // Initialize featured cards and timer
+    setDailyFeatured();
+    setRandomFeatured();
+    updateDailyTimer();
+    setInterval(updateDailyTimer, 1000);
+  </script>
+  <script>
+    // Add event listener to toggle dark mode and save the user's preference in local storage
+    const toggleModeBtn = document.getElementById('toggleModeBtn');
+
+    toggleModeBtn.addEventListener('click', () => {
+      document.body.classList.toggle('light-mode');
+      document.body.classList.toggle('dark-mode');
+
+      // Save dark mode preference in local storage
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('darkMode', 'enabled');
+      } else {
+        localStorage.setItem('darkMode', 'disabled');
+      }
+    });
+
+    // Add event listener to set dark mode on page load based on user's preference
+    document.addEventListener('DOMContentLoaded', () => {
+      const darkMode = localStorage.getItem('darkMode');
+
+      if (darkMode === 'enabled') {
+        document.body.classList.add('dark-mode');
+        document.body.classList.remove('light-mode');
+      }
+    });
+  </script>
+</body>
+</html>

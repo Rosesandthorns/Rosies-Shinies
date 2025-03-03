@@ -1,0 +1,309 @@
+/* styles.css */
+
+/* Reset or base styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Light/Dark mode basics */
+body.light-mode {
+  background-color: #118bbf;
+  color: #000;
+}
+
+body.dark-mode {
+  background-color: #0a5778;
+  color: #fff;
+}
+
+h1 {
+  text-align: center;
+  margin: 20px 0;
+}
+
+/* Container for search & toggle button */
+.top-controls {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+/* Search bar */
+#searchInput {
+  padding: 8px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: 1px solid #ccc;
+  min-width: 220px;
+}
+
+/* Toggle Light/Dark Mode Button */
+#toggleModeBtn,
+#toggleFilterBtn {
+  padding: 8px 16px;
+  font-size: 1rem;
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#toggleModeBtn:hover,
+#toggleFilterBtn:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Filter container (initially hidden) */
+#filterContainer {
+  display: none; /* hidden by default */
+  max-width: 800px;
+  margin: 0 auto 20px;
+  padding: 15px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border-radius: 20px;
+  color: #000;
+}
+
+body.dark-mode #filterContainer {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+/* Filter layout */
+.filter-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+#tagFilters {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+#tagFilters h3 {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+/* Tag checkboxes container */
+#includeTags,
+#excludeTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+/* Checkboxes */
+.tag-checkbox {
+  margin-right: 5px;
+}
+
+/* Pokemon container */
+#pokemonContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: stretch; /* Make all cards stretch vertically */
+}
+
+/* Card styling */
+.card {
+  background-color: rgba(255, 255, 255, 0.85);
+  color: #000;
+  border-radius: 20px;
+  width: 320px; 
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease, background-color 0.3s ease;
+}
+
+body.dark-mode .card {
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+}
+
+/* Hover lift effect */
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.card img {
+  width: 100%;
+  object-fit: cover;
+  height: 200px;
+}
+
+.card-header {
+  padding: 10px 15px;
+  background-color: inherit;
+}
+
+.nickname {
+  margin: 0;
+  font-size: 1.4rem;
+}
+
+.card-body {
+  padding: 10px 15px;
+  flex-grow: 1;  /* Allow card body to expand and fill available space */
+}
+
+.species {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.description {
+  font-size: 0.95rem;
+  margin-bottom: 10px;
+}
+
+/* Tag container at bottom of card */
+.tag-container {
+  padding: 10px 15px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto; /* Push tags to the bottom */ 
+}
+
+/* Tag styling */
+.tag {
+  display: inline-block;
+  padding: 4px 12px;
+  margin: 2px 0;
+  border-radius: 9999px; /* pill shape */
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  color: #fff;
+}
+
+/* The user-provided color classes: */
+.tag.sv { background-color: #b520fa; }
+.tag.water { background-color: #22cdd6; }
+.tag.grass { background-color: #22d622; }
+.tag.dark { background-color: #0a0a0a; color: white; }
+.tag.fire { background-color: #e81d02; }
+.tag.electric { background-color: #e9f723; color: black; }
+.tag.flying { background-color: #ade0ca; }
+.tag.pla { background-color: #e0cdad; color: black; }
+.tag.poison { background-color: #3b0769; }
+.tag.ghost { background-color: #221b29; }
+.tag.swsh { background-color: #1ce3ed; }
+.tag.fairy { background-color: #ff94d2; color: black; }
+.tag.dragon { background-color: #261c0f; color: white; }
+.tag.fighting { background-color: #f08d24; }
+.tag.steel { background-color: #6e6760; }
+.tag.bug { background-color: #9dbf3d; color: black; }
+.tag.psychic { background-color: #963dbf; }
+.tag.favourite {
+  background: linear-gradient(to right, #ffbf0f, #fff30f, #fcf792);
+  color: black;
+}
+.tag.rock { background-color: #4d2408; color: white; }
+.tag.ground { background-color: #8b4513; color: white; }
+.tag.paradox { background-color: #db8f32; color: white; }
+.tag.starter {
+  background: linear-gradient(to right, #22cdd6, #22d622, #e81d02);
+  color: white;
+}
+.tag.ice { background-color: #aef2e5; color: black; }
+.tag.fossil { background-color: #452d1c; color: white; }
+.tag.legendary { background-color: #d435b1; }
+.tag.ultra-beast { background-color: #827f7c; color: white; }
+.tag.normal { background-color: #d3d3d3; color: black; }
+.tag.alpha { background-color: #fa0505; }
+.tag.lgpe { background-color: #fae105; color: black; }
+.tag.pogo { background-color: #0349fc; color: black; }
+.tag.mythical { background-color: #f0b6cc; color: black; }
+
+/* Basic Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body styling */
+body.light-mode {
+  background-color: #118bbf; /* or your preferred light bg color */
+  color: #000;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+body.dark-mode {
+  background-color: #0a5778; /* or your preferred dark bg color */
+  color: #fff;
+  font-family: sans-serif;
+  min-height: 100vh;
+}
+
+/* NAVBAR */
+.navbar {
+  width: 100%;
+  background-color: #333; /* Adjust color as you like */
+}
+
+.nav-container {
+  max-width: 1200px; /* Center constraint */
+  margin: 0 auto;
+  padding: 0 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 60px; /* Nav bar height */
+}
+
+.nav-brand {
+  color: #fff;
+  text-decoration: none;
+  font-size: 1.2rem;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 4px;
+}
+
+.nav-list li a:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+/* MAIN CONTAINER to center everything */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px 16px; /* Some padding around the edges */
+}
+
+.container { text-align: center; }
+
+#daily-featured, #random-featured {
+  display: flex;
+  flex-direction: column; /* Align items vertically within the container */
+  align-items: center; /* Center the card horizontally */
+}

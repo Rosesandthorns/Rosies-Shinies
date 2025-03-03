@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Rosie's Shiny Pokémon Showcase</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="data.js" defer></script>
+</head>
+<body class="dark-mode">
+  <nav class="navbar">
+    <div class="nav-container">
+      <a href="home.html" class="nav-brand">Rosie's Shiny Pokémon</a>
+      <ul class="nav-list">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="showcase.html">Showcase</a></li>
+        <li><a href="others.html">Others</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+    <h1>Showcase</h1>
+    <div class="top-controls">
+      <input type="text" id="searchInput" placeholder="Search by Nickname or Species...">
+      <button id="toggleModeBtn">Toggle Light/Dark Mode</button>
+      <button id="toggleFilterBtn">Show Filters</button>
+    </div>
+
+    <div id="filterContainer" style="display: none;">
+      <div class="filter-row">
+        <div id="filterMode">
+          <label><input type="radio" name="filterType" value="AND" checked> AND</label>
+          <label><input type="radio" name="filterType" value="OR"> OR</label>
+        </div>
+      </div>
+      <div id="tagFilters">
+        <div>
+          <h3>Include Tags</h3>
+          <div id="includeTags"></div>
+        </div>
+        <div>
+          <h3>Exclude Tags</h3>
+          <div id="excludeTags"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pokemonContainer"></div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      let currentPokemonList = [...pokemonList];
+      const searchInput = document.getElementById('searchInput');
+      const pokemonContainer = document.getElementById('pokemonContainer');
+      const filterModeRadio = document.getElementsByName('filterType');
+      const includeTagsContainer = document.getElementById('includeTags');
+      const excludeTagsContainer = document.getElementById('excludeTags');
+      const toggleModeBtn = document.getElementById('toggleModeBtn');
+      const toggleFilterBtn = document.getElementById('toggleFilterBtn');
+      const filterContainer = document.getElementById('filterContainer');
+
+      function getAllTags(list) {
+        const tagSet = new Set();
+        list.forEach(pkm => {
+          pkm.tags.forEach(tag => tagSet.add(tag));
+        });
+        return Array.from(tagSet).sort();
+      }
+
+      function createTagCheckboxes(tags) {
+        includeTagsContainer.innerHTML = '';
+        excludeTagsContainer.innerHTML = '';
+        
+        tags.forEach(tag => {
+          const createCheckbox = (container, className) => {
+            const label = document.createElement('label');
+            const checkbox = document.createElement('input');
+            checkbox.type = 'checkbox';
+            checkbox.value = tag;
+            checkbox.classList.add('tag-checkbox', className);
+            label.appendChild(checkbox);
+            label.appendChild(document.createTextNode(tag));
+            container.appendChild(label);
+          };
+          
+          createCheckbox(includeTagsContainer, 'include');
+          createCheckbox(excludeTagsContainer, 'exclude');
+        });
+      }
+
+      function filterPokemon() {
+        const searchText = searchInput.value.toLowerCase();
+        let filterType = document.querySelector('input[name="filterType"]:checked').value;
+        const includedTags = [];
+        const excludedTags = [];
+
+        document.querySelectorAll('.tag-checkbox.include:checked').forEach(checkbox => {
+          includedTags.push(checkbox.value.toLowerCase());
+        });
+        document.querySelectorAll('.tag-checkbox.exclude:checked').forEach(checkbox => {
+          excludedTags.push(checkbox.value.toLowerCase());
+        });
+
+        return pokemonList.filter(pkm => {
+          const matchesSearch = pkm.nickname.toLowerCase().includes(searchText) || pkm.species.toLowerCase().includes(searchText);
+          if (!matchesSearch) return false;
+
+          for (const exTag of excludedTags) {
+            if (pkm.tags.some(t => t.toLowerCase() === exTag)) return false;
+          }
+          
+          if (includedTags.length > 0) {
+            return filterType === 'AND' 
+              ? includedTags.every(tag => pkm.tags.some(t => t.toLowerCase() === tag)) 
+              : includedTags.some(tag => pkm.tags.some(t => t.toLowerCase() === tag));
+          }
+          
+          return true;
+        });
+      }
+
+      function renderPokemon(list) {
+        pokemonContainer.innerHTML = '';
+        list.forEach(pkm => {
+          const card = document.createElement('div');
+          card.classList.add('card');
+          
+          card.innerHTML = `
+            <div class="card-header">
+              <h2 class="nickname">${pkm.nickname}</h2>
+            </div>
+            <img src="${pkm.imageUrl}" alt="${pkm.nickname}">
+            <div class="card-body">
+              <p class="species">${pkm.species}</p>
+              <p class="description">${pkm.description}</p>
+            </div>
+            <div class="tag-container">
+              ${pkm.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join('')}
+            </div>
+          `;
+          pokemonContainer.appendChild(card);
+        });
+      }
+
+      function onFiltersChanged() {
+        currentPokemonList = filterPokemon();
+        renderPokemon(currentPokemonList);
+      }
+
+      toggleModeBtn.addEventListener('click', () => {
+        document.body.classList.toggle('light-mode');
+        document.body.classList.toggle('dark-mode');
+        localStorage.setItem('darkMode', document.body.classList.contains('dark-mode') ? 'enabled' : 'disabled');
+      });
+
+      toggleFilterBtn.addEventListener('click', () => {
+        filterContainer.style.display = filterContainer.style.display === 'none' ? 'block' : 'none';
+        toggleFilterBtn.textContent = filterContainer.style.display === 'none' ? 'Show Filters' : 'Hide Filters';
+      });
+
+      searchInput.addEventListener('input', onFiltersChanged);
+      document.addEventListener('change', event => {
+        if (event.target.classList.contains('tag-checkbox')) onFiltersChanged();
+      });
+
+      createTagCheckboxes(getAllTags(pokemonList));
+      renderPokemon(currentPokemonList);
+      
+      if (localStorage.getItem('darkMode') === 'enabled') {
+        document.body.classList.add('dark-mode');
+      }
+    });
+  </script>
+</body>
+</html>
