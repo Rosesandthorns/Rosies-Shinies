@@ -17,15 +17,15 @@ const pokemonList = [
     {
         nickname: "Moonlight",
         species: "#609 - Chandelure",
-        description: "https://www.serebii.net/Shiny/SWSH/609.png",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/b/b3/Chandelure.png", //From same wiki
+        description: "My first hunt getting back into shiny hunting after a 6 month break",
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/609.png", //From same wiki
         tags: ["Favourite", "Fire", "Ghost", "SV"]
     },
     {
         nickname: "Jiggly",
         species: "#0039 - Jigglypuff",
-        description: "https://www.serebii.net/Shiny/SWSH/039.png",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/f/f7/Jigglypuff.png",  //From same wiki
+        description: "I dont remember this one",
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/039.png",  //From same wiki
         tags: ["Fairy", "Normal", "SV"]
     },
     {
