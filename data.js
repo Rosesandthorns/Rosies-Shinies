@@ -17,14 +17,14 @@ const pokemonList = [
     {
         nickname: "Moonlight",
         species: "#609 - Chandelure",
-        description: "This Flaming Candle Was Caught In Kitakami",
+        description: "https://www.serebii.net/Shiny/SWSH/609.png",
         imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/b/b3/Chandelure.png", //From same wiki
         tags: ["Favourite", "Fire", "Ghost", "SV"]
     },
     {
         nickname: "Jiggly",
         species: "#0039 - Jigglypuff",
-        description: "This puffball was caught in Paldea",
+        description: "https://www.serebii.net/Shiny/SWSH/039.png",
         imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/f/f7/Jigglypuff.png",  //From same wiki
         tags: ["Fairy", "Normal", "SV"]
     },
@@ -32,70 +32,70 @@ const pokemonList = [
         nickname: "Aqua Antis",
         species: "#0055 - Golduck",
         description: "The Infamous Aqua Antis, Found in the SWSH DLC between my favourite shiny and my target",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/9/96/Golduck.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/055.png", //From same wiki
         tags: ["Water", "SwSh"]
     },
     {
         nickname: "APE",
         species: "#0057 - Primeape",
         description: "This fighter was found in Paldea while looking for a Breloom",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/e/e3/Primeape.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/057.png", //From same wiki
         tags: ["Fighting", "SV"]
     },
     {
         nickname: "Anger",
         species: "#0057 - Primeape",
         description: "This warrior was found in Paldea while looking for a Breloom, right after APE",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/e/e3/Primeape.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/057.png", //From same wiki
         tags: ["Fighting", "SV"]
     },
     {
         nickname: "Fury",
         species: "#0058 - Growlithe",
         description: "This hotshot was found in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/3/34/Growlithe.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/058.png", //From same wiki
         tags: ["Fire", "SV"]
     },
     {
         nickname: "Legend",
         species: "#0059 - Arcanine",
         description: "Fury's older brother, also found in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/f/f7/Arcanine.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SWSH/059.png", //From same wiki
         tags: ["Fire", "SV"]
     },
     {
         nickname: "Slow",
         species: "#0079 - Slowpoke",
         description: "This Simple Creature Was Caught In Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/5/56/Slowpoke.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/079.png", //From same wiki
         tags: ["Water", "Psychic", "SV"]
     },
     {
         nickname: "Grapé",
         species: "#0080 - Slowbro",
         description: "Grapé is just as slow as Slow, but looks like a grape, caught in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/d/d2/Slowbro.png",  //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/080.png",  //From same wiki
         tags: ["Water", "Psychic", "SV"]
     },
     {
         nickname: "Clover",
         species: "#0084 - Doduo",
         description: "This sili birb was caught at Blueberry Acadamy",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/4/48/Doduo.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/084.png", //From same wiki
         tags: ["Normal", "Flying", "SV"]
     },
     {
         nickname: "Dodrio, Formally Lucky",
         species: "#0085 - Dodrio",
         description: "My first caught shiny, caught in PoGo",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/3/37/Dodrio.png",  //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/085.png",  //From same wiki
         tags: ["Normal", "Flying", "PoGo", "Favourite"]
     },
     {
         nickname: "Mint",
         species: "#0088 - Grimer",
         description: "This suprisingly nice smelling pile of poison was found while hunting Ditto in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/5/5f/Grimer.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/088.png", //From same wiki
         tags: ["Poison", "SV"]
     },
     {
