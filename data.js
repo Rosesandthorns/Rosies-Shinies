@@ -4,7 +4,7 @@ const pokemonList = [
         nickname: "Chop",
         species: "#475 - Gallade",
         description: "This is Chop, probably my most used pokemon ever. Chop was caught in SV and has been my false swiper ever since, and runs heal pulse, false swipe, hypnosis, and psychic, and has the abiltiy Sharpness to make false swipe stronger.",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/2/2d/Gallade.png/revision/latest?cb=20230131121436",
+        imageUrl: "static.wikia.nocookie.net/shiny-pokemon/images/2/2d/Gallade.png/revision/latest?cb=20230131121436",
         tags: ["Favourite", "Fighting", "Psychic", "SV"]
     },
     {
