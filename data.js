@@ -354,7 +354,7 @@ const pokemonList = [
         nickname: "Lightning",
         species: "#0403 - Shinx",
         description: "Shinx was my first shiny actually, back in Gen 4, anyways this one is from Paldea",
-        imageUrl: "https://www.serebii.net/Shiny/SV/new/0403.png",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/403.png",
         tags: ["electric", "SV"]
     },
     {
@@ -375,7 +375,7 @@ const pokemonList = [
         nickname: "Savior",
         species: "#0418 - Buizel",
         description: "I barely remember this one, Paldea",
-        imageUrl: "https://www.serebii.net/Shiny/SV/new/0418.png",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/418.png",
         tags: ["water", "SV"]
     },
     {
@@ -410,7 +410,7 @@ const pokemonList = [
     nickname: "Mushrö",
     species: "#0591 - Amoonguss",
     description: "Caught this and 3 others in paldea in the span of 2 minutes",
-    imageUrl: "https://www.serebii.net/Shiny/SV/new/5-1.png",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/591.png",
     tags: ["Grass", "Poison", "SV"]
     },
     {
@@ -613,7 +613,7 @@ const pokemonList = [
     nickname: "Lactose",
     species: "#0868 - Milcery",
     description: "Placeholder",
-    imageUrl: "868",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/868.png",
     tags: ["Fairy", "SV"]
     },
     {
