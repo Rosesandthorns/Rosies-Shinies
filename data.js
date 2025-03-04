@@ -403,7 +403,7 @@ const pokemonList = [
         nickname: "Nightmare",
         species: "#0571 - Zoroark",
         description: "Found haunting dreams in Paldea",
-        imageUrl: "https://www.serebii.net/Shiny/SV/new/572.png",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/571.png",
         tags: ["dark", "SV"]
     },
     {
