@@ -116,28 +116,28 @@ const pokemonList = [
         nickname: "Electro",
         species: "#0101 - Electrode",
         description: "This shocking behemith was found in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/6/64/Electrode.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/101.png", //From same wiki
         tags: ["Electric", "SV"]
     },
     {
         nickname: "Sap",
         species: "#0103 - Alolan Exeggutor",
         description: "No one ever told sap to keep her head out of the clouds when at blueberry academy",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/0/08/Exeggutor-Alola.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/103-a.png", //From same wiki
         tags: ["Grass", "Dragon", "SV"]
     },
     {
         nickname: "Summer",
         species: "#0103 - Exeggutor",
         description: "Summer loved the sun so much, she tried to reach for it, *almost there*. caught at blueberry academy",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/a/a5/Exeggutor.png",  //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/103-a.png",  //From same wiki
         tags: ["Grass", "Dragon", "SV"]
     },
     {
         nickname: "Koffing",
         species: "#0109 - Koffing",
         description: "I caught this over a year ago in Kitakami, No clue why it's not named~",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/3/37/Koffing.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/100.png", //From same wiki
         tags: ["Poison", "SV"]
     },
     {
@@ -151,189 +151,189 @@ const pokemonList = [
         nickname: "lavander",
         species: "#0131 - Lapras",
         description: "This lapras was found in the chilly seas of the polar biome in Blueberry Academy",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/3/37/Lapras.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/131.png", //From same wiki
         tags: ["Ice", "Water", "SV"]
     },
     {
         nickname: "Bloby",
         species: "#0132 - Ditto",
         description: "This shapeshifter kept me busy on hunting in Paldea for a few days",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/b/b7/Ditto.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/132.png", //From same wiki
         tags: ["Normal", "SV"]
     },
     {
         nickname: "Iggly",
         species: "#0174 - Igglybuff",
         description: "Aww, what a cuti- wait why do you have competitive and copycat-  Found in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/b/bf/Igglybuff.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/174.png", //From same wiki
         tags: ["Normal", "Fairy", "SV"]
     },
     {
         nickname: "Fluffy",
         species: "#0179 - Mareep",
         description: "Fluffy is what would happen if cotten candy was alive, found in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/9/94/Mareep.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/179.png", //From same wiki
         tags: ["Electric", "SV"]
     },
     {
         nickname: "Flaffy",
         species: "#0180 - Flaaffy",
         description: "No, nor the name or species is a typo, thats how Flaaffy is spelt, its weird, caught in paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/f/f5/Flaaffy.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/180.png", //From same wiki
         tags: ["Electric", "SV"]
     },
     {
         nickname: "Shine",
         species: "#0183 - Marill",
         description: "this green orb was caught in Paldea, do you think you can use it to awaken Primal Rayquaza?",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/2/21/Marill.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/183.png", //From same wiki
         tags: ["Water", "Fairy", "SV"]
     },
     {
         nickname: "Golden",
         species: "#0184 - Azumaril",
         description: "My first boosted odds shiny of Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/f/f9/Azumarill.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/184.png", //From same wiki
         tags: ["Water", "Fairy", "SV"]
     },
     {
         nickname: "Sudo",
         species: "#0185 - Sudowoodo",
         description: "This is a natural tree of Paldea, what do you mean its a Pokemon?",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/9/97/Sudowoodo.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/185.png", //From same wiki
         tags: ["Rock", "SV"]
     },
     {
         nickname: "Green",
         species: "#0187 - Hoppip",
         description: "This Hoppip is said to have flown over all of Paldea until it got sunburnt, and then turned green",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/5/57/Hoppip.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/187.png", //From same wiki
         tags: ["Grass", "Flying", "SV"]
     },
     {
         nickname: "Hoppy",
         species: "#0188 - Skiploom",
         description: "The legend of Green may have been wrong, but you Cant deny the legend of Hoppy getting sunburnt in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/8/8b/Skiploom.png",//From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/188.png",//From same wiki
         tags: ["Grass", "Flying", "SV"]
     },
     {
         nickname: "Jumpy",
         species: "#0189 - Jumpluff",
         description: "Jumpy is the living embodiment of :3. bringing :3 to Paldea to this day",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/1/18/Jumpluff.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/189.png", //From same wiki
         tags: ["Grass", "Flying", "SV"]
     },
     {
         nickname: "Poffy",
         species: "#0194 - Wooper",
         description: "This pink goof has no thoughts at any given time, caught in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/9/93/Wooper.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/194.png", //From same wiki
         tags: ["Water", "Ground", "SV"]
     },
     {
         nickname: "King",
         species: "#0199 - Slowking",
         description: "This queen is slaying all gender norms in Paldea, slay Queen!",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/6/60/Slowking.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/199.png", //From same wiki
         tags: ["Water", "Psychic", "SV"]
     },
     {
         nickname: "Forret",
         species: "#0205 - Forretress",
         description: "This is how the great crator of Paldea was formed",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/1/12/Forretress.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/205.png", //From same wiki
         tags: ["Bug", "Steel", "SV"]
     },
     {
         nickname: "Dun",
         species: "#0206 - Dunsparce",
         description: "This snake was found in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/8/84/Dunsparce.png",//From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/206.png",//From same wiki
         tags: ["Normal", "SV"]
     },
     {
         nickname: "Present",
         species: "#0225 - Delibird",
         description: "Present is almost always late for Christmas in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/5/51/Delibird.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/225.png", //From same wiki
         tags: ["Ice", "Flying", "SV"]
     },
     {
         nickname: "Nick",
         species: "#0225 - Delibird",
         description: "Present's twin, caught in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/5/51/Delibird.png",  //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/225.png",  //From same wiki
         tags: ["Ice", "Flying", "SV"]
     },
     {
         nickname: "Dour",
         species: "#0228 - Houndour",
         description: "This dark puppy was found in a cave in Paldea",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/2/2c/Houndour.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/228.png", //From same wiki
         tags: ["Fire", "Dark", "SV"]
     },
     {
         nickname: "Doom",
         species: "#0229 - Houndoom",
         description: "Doom was caught in the depths of Poco Path",
-        imageUrl: "https://static.wikia.nocookie.net/shiny-pokemon/images/3/39/Houndoom.png", //From same wiki
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/229.png", //From same wiki
         tags: ["Fire", "Dark", "SV"]
     },
     {
         nickname: "Radaz",
         species: "#0258 - Mudkip",
-        description: "PINK FISH was found in Blueberry Academy",
-        imageUrl: "https://via.placeholder.com/200",
+        description: "this pink fish was found in Blueberry Academy",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/258.png",
         tags: ["Water", "Ground", "SV"]
     },
     {
         nickname: "Pooch",
         species: "#0261 - Poochyena",
         description: "this yellow doggo was found in Kitakami while hatching eggs for Blueberry",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/261.png",
         tags: ["Dark", "SV"]
     },
     {
         nickname: "Peckish",
         species: "#0285 - Shroomish",
         description: "Caught in Paldea. this took, **8 hours.**",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/285.png",
         tags: ["Grass", "SV"]
     },
     {
         nickname: "Boxer",
         species: "#0296 - Makuhita",
         description: "I dont even remember catching this one, but its from Paldea",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/296.png",
         tags: ["Fighting", "SV"]
     },
     {
         nickname: "Emerald",
         species: "#0302 - Sableye",
         description: "This gem was found in Paldea",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/302.png",
         tags: ["Dark", "Ghost", "SV"]
     },
     {
         nickname: "Spoey",
         species: "#0325 - Spoink",
         description: "Bouncing all the way from Paldea",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/325.png",
         tags: ["psychic", "SV"]
     },
     {
         nickname: "Grum",
         species: "#0326 - Grumpig",
         description: "A psychic pig from Paldea, neat",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/326.png",
         tags: ["psychic", "SV"]
     },
     {
         nickname: "Swab",
         species: "#0334 - Altaria",
         description: "How is this a dragon     From Paldea",
-        imageUrl: "https://via.placeholder.com/200",
+        imageUrl: "https://www.serebii.net/Shiny/SV/new/334.png",
         tags: ["flying", "dragon", "SV"]
     },
     {
