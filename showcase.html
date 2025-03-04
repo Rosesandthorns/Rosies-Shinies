@@ -143,27 +143,27 @@
       }
 
       function renderPokemon(list) {
-        pokemonContainer.innerHTML = '';
-        list.forEach(pkm => {
-          const card = document.createElement('div');
-          card.classList.add('card');
-          
-          card.innerHTML = `
+    pokemonContainer.innerHTML = '';
+    list.forEach(pkm => {
+        const card = document.createElement('div');
+        card.classList.add('card');
+        
+        card.innerHTML = `
             <div class="card-header">
-              <h2 class="nickname">${pkm.nickname}</h2>
+                <h2 class="nickname">${pkm.nickname}</h2>
             </div>
-            <img src="${pkm.imageUrl}" alt="${pkm.nickname}">
+            <img src="${pkm.imageUrl}" alt="${pkm.nickname}" loading="lazy">
             <div class="card-body">
-              <p class="species">${pkm.species}</p>
-              <p class="description">${pkm.description}</p>
+                <p class="species">${pkm.species}</p>
+                <p class="description">${pkm.description}</p>
             </div>
             <div class="tag-container">
-              ${pkm.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join('')}
+                ${pkm.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join('')}
             </div>
-          `;
-          pokemonContainer.appendChild(card);
-        });
-      }
+        `;
+        pokemonContainer.appendChild(card);
+    });
+}
 
       function onFiltersChanged() {
         currentPokemonList = filterPokemon();
