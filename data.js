@@ -1180,14 +1180,14 @@ const pokemonList = [
     nickname: "Queen",
     species: "#0075 - Alolan Graveler",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/075-a.png",
     tags: ["Rock", "Electric", "SV"]
     },
     {
     nickname: "Butterscotch",
     species: "#0026 - Alolan Raichu",
     description: "Placeholder",
-    imageUrl: "https://www.serebii.net/Shiny/SWSH/528-a.png",
+    imageUrl: "https://cdn.shopify.com/s/files/1/1732/7223/files/poke_capture_0026_001_mf_n_00000000_f_r_medium.png?v=1701796360",
     tags: ["Electric", "Psychic", "SWSh"]
     },
     {
@@ -1271,7 +1271,7 @@ const pokemonList = [
     nickname: "Mudé",
     species: "#0749 - Mudbray",
     description: "Placeholder",
-    imageUrl: "https://www.serebii.net/Shiny/SV/new/719.png",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/749.png",
     tags: ["Ground", "SV"]
     },
     {
@@ -1537,7 +1537,7 @@ const pokemonList = [
     nickname: "Floaté",
     species: "#0419 - Floatzel",
     description: "Plaeholder",
-    imageUrl: "https://www.serebii.net/Shiny/SV/new/419476.png",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/419.png",
     tags: ["Dark", "Flying", "SV"]
     },
     {
@@ -1593,161 +1593,161 @@ const pokemonList = [
     nickname: "Leah",
     species: "#0270 - Lotad",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/270.png",
     tags: ["Water", "Grass", "SV"]
     },
     {
     nickname: "Droop",
     species: "#0271 - Lombre",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/271.png",
     tags: ["Water", "Grass", "SV"]
     },
     {
     nickname: "Marty",
     species: "#0272 - Ludicolo",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/272.png",
     tags: ["Water", "Grass", "SV"]
     },
     {
     nickname: "Blaze",
     species: "#0391 - Monferno",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/391.png",
     tags: ["Fire", "Fighting", "Starter", "SV"]
     },
     {
     nickname: "Fault",
     species: "#0436 - Bronzor",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/436.png",
     tags: ["Steel", "Psychic", "SV"]
     },
     {
     nickname: "Bloom",
     species: "#0585 - Deerling",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/585.png",
     tags: ["Normal", "Grass", "SV"]
     },
     {
     nickname: "Bubbles",
     species: "#0657 - Frogadier",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/657.png",
     tags: ["Water", "Starter", "SV"]
     },
     {
     nickname: "Rogue",
     species: "#0658 - Greninja",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/658.png",
     tags: ["Water", "Dark", "Starter", "SV"]
     },
     {
     nickname: "Rachel",
     species: "#0739 - Crabrawler",
     description: "Plaeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/739.png",
     tags: ["Fighting", "SV"]
     },
     {
     nickname: "Koka",
     species: "#0958 - Tinkatuff",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/958.png",
     tags: ["Fairy", "Steel", "SV"]
     },
     {
     nickname: "Dane",
     species: "#0965 - Varoom",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/965.png",
     tags: ["Steel", "Poison", "SV"]
     },
     {
     nickname: "Motar",
     species: "#0966 - Revavroom",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/966.png",
     tags: ["Steel", "Poison", "SV"]
     },
     {
     nickname: "Serpant",
     species: "#1019 - Hydrapple",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/1019.png",
     tags: ["Grass", "Dragon", "SV"]
     },
     {
     nickname: "Inferno",
     species: "#0392 - Infernape",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/392.png",
     tags: ["Fire", "Fighting", "Starter", "SV"]
     },
     {
     nickname: "Palm",
     species: "#0103 - Exeggutor",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/103.png",
     tags: ["Grass", "Psychic", "SV"]
     },
     {
     nickname: "Night",
     species: "#0164 - Noctowl",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/164.png",
     tags: ["Normal", "Flying", "SV"]
     },
     {
     nickname: "Golden",
     species: "#0250 - Ho-Oh",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/250.png",
     tags: ["Fire", "Flying", "SwSh", "Legendary", "Favourite"]
     },
     {
     nickname: "Shock",
     species: "#0403 - Shinx",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/403.png",
     tags: ["Electric", "SV"]
     },
     {
     nickname: "Clawy",
     species: "#0693 - Clawitzer",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/693.png",
     tags: ["Water", "SV"]
     },
     {
     nickname: "Bowtie",
     species: "#0722 - Rowlet",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/722.png",
     tags: ["Grass", "Flying", "Starter", "SV"]
     },
     {
     nickname: "Heart",
     species: "#0782 - Jangmo-o",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/782.png",
     tags: ["Dragon", "SV"]
     },
     {
     nickname: "Rose Quartz",
     species: "#0783 - Hakamo-o",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/783.png",
     tags: ["Dragon", "Fighting", "SV"]
     },
     {
     nickname: "Eclipse",
     species: "#0792 - Lunala",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/792.png",
     tags: ["Psychic", "Ghost", "SwSh", "Favourite", "Legendary"]
     },
     {
