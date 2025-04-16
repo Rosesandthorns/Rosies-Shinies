@@ -1194,7 +1194,7 @@ const pokemonList = [
     nickname: "Sonar",
     species: "#0048 - Venonat",
     description: "Placeholder",
-    imageUrl: "https://via.placeholder.com/200",
+    imageUrl: "https://www.serebii.net/Shiny/SV/new/048.png",
     tags: ["Bug", "Poison", "SV"]
     },
     {
