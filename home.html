@@ -53,6 +53,10 @@
       const card = document.createElement('div');
       card.classList.add('card');
 
+      const levelDisplay = (typeof pkm.level === "number" || typeof pkm.level === "string") ? pkm.level : "?";
+      const natureDisplay = pkm.nature ? pkm.nature : "?";
+      const movesetDisplay = Array.isArray(pkm.moveset) ? pkm.moveset : [];
+
       // Header
       const header = document.createElement('div');
       header.classList.add('card-header');
@@ -75,8 +79,27 @@
       const descEl = document.createElement('p');
       descEl.classList.add('description');
       descEl.textContent = pkm.description;
+
+      // Extra Info (Level/Nature)
+      const extraInfo = document.createElement('div');
+      extraInfo.classList.add('extra-info');
+      extraInfo.innerHTML = `
+        <span class="level"><strong>Lv.</strong> ${levelDisplay}</span>
+        <span class="nature"><strong>Nature:</strong> ${natureDisplay}</span>
+      `;
+
+      // Moveset
+      const movesetDiv = document.createElement('div');
+      movesetDiv.classList.add('moveset');
+      movesetDiv.innerHTML = `<strong>Moves:</strong>
+        <ul>
+          ${movesetDisplay.map(move => `<li>${move}</li>`).join('')}
+        </ul>`;
+
       body.appendChild(speciesEl);
       body.appendChild(descEl);
+      body.appendChild(extraInfo);
+      body.appendChild(movesetDiv);
 
       // Tag container
       const tagContainer = document.createElement('div');
