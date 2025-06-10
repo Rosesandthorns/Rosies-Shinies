@@ -73,7 +73,7 @@
       const uniqueSpecies = new Set(
         pokemonList
           .map(pkm => pkm.species.split(" - ")[1]) // Extract species name
-          .filter(species => !regionalForms.some(region => species.includes(region))) // Exclude regional forms
+          .filter(species => !regionalForms.some(region => species && species.includes(region))) // Exclude regional forms
       );
       const totalUniquePokemon = uniqueSpecies.size;
 
@@ -143,12 +143,16 @@
       }
 
       function renderPokemon(list) {
-    pokemonContainer.innerHTML = '';
-    list.forEach(pkm => {
-        const card = document.createElement('div');
-        card.classList.add('card');
-        
-        card.innerHTML = `
+        pokemonContainer.innerHTML = '';
+        list.forEach(pkm => {
+          const card = document.createElement('div');
+          card.classList.add('card');
+          
+          const levelDisplay = (typeof pkm.level === "number" || typeof pkm.level === "string") ? pkm.level : "?";
+          const natureDisplay = pkm.nature ? pkm.nature : "?";
+          const movesetDisplay = Array.isArray(pkm.moveset) ? pkm.moveset : [];
+
+          card.innerHTML = `
             <div class="card-header">
                 <h2 class="nickname">${pkm.nickname}</h2>
             </div>
@@ -156,14 +160,24 @@
             <div class="card-body">
                 <p class="species">${pkm.species}</p>
                 <p class="description">${pkm.description}</p>
+                <div class="extra-info">
+                  <span class="level"><strong>Lv.</strong> ${levelDisplay}</span>
+                  <span class="nature"><strong>Nature:</strong> ${natureDisplay}</span>
+                </div>
+                <div class="moveset">
+                  <strong>Moves:</strong>
+                  <ul>
+                    ${movesetDisplay.map(move => `<li>${move}</li>`).join('')}
+                  </ul>
+                </div>
             </div>
             <div class="tag-container">
                 ${pkm.tags.map(tag => `<span class="tag ${tag.toLowerCase().replace(/\s+/g, '-')}">${tag}</span>`).join('')}
             </div>
-        `;
-        pokemonContainer.appendChild(card);
-    });
-}
+          `;
+          pokemonContainer.appendChild(card);
+        });
+      }
 
       function onFiltersChanged() {
         currentPokemonList = filterPokemon();
